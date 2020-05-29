@@ -84,8 +84,11 @@
 |玫瑰信贷|2010|HDRip|NA|NA|NA|NC-17|
 |去南方|2009|DVDRip|NA|NA|NA|NC-17|
 |鲁贝之灯|2019|1080P|x264|NA|NA|PG-13|
+|小妇人|2019|1080P 10bit|x265|HD|5.1|PG|
+|龙虾|2015|1080P|x264|HD|5.1|R|
+|九品芝麻官|1994|1080P|x264|NA|5.1|PG-13|
 
-共计73部
+共计76部
 
 <center>Made by OrsonKrennlc with ❤️</center>
 
