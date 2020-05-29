@@ -19,9 +19,9 @@
 |星球大战4：新希望|1977|HDTV|x264|NA|NA|PG|
 |星球大战5：帝国反击战|1980|HDTV|x264|NA|NA|PG|
 |星球大战6：绝地归来|1983|HDTV|x264|NA|NA|PG|
-|[星球大战7：原力觉醒](./SW7.md)|2015|1080P|x264|HD|7.1|PG-13|
-|[星球大战8：最后的绝地武士](./SW8.md)|2017|1080P|x264|NA|NA|PG-13|
-|[星球大战9：天行者崛起](./SW9.md)|2019|1080P|x264|HD|7.1|PG-13|
+|[星球大战7：原力觉醒](https://orsonkrennlc.github.io/films/SW7)|2015|1080P|x264|HD|7.1|PG-13|
+|[星球大战8：最后的绝地武士](https://orsonkrennlc.github.io/films/SW8)|2017|1080P|x264|NA|NA|PG-13|
+|[星球大战9：天行者崛起](https://orsonkrennlc.github.io/films/SW9)|2019|1080P|x264|HD|7.1|PG-13|
 |霍比特人1：意外之旅|2012|1080P|x264|DTS|NA|PG-13|
 |霍比特人2：史矛革之战|2013|1080P|x264|NA|NA|PG-13|
 |霍比特人3：五军之战|2014|1080P|x264|NA|NA|R|
