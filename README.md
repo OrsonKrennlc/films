@@ -9,22 +9,22 @@
 
 ## 电影
 
-|片名|年份|清晰度|格式|DTS|DD|分级|
-|----|----|:----:|----|:-:|:-:|:-:|
-|[侠盗一号](https://movie.douban.com/subject/25894431/)|2016|1080P|x264|HD|7.1|PG-13|
-|[游侠索罗](https://movie.douban.com/subject/25900947/)|2018|1080P|x264|HD|NA|PG-13|
-|[星球大战前传1：魅影危机](https://movie.douban.com/subject/1294362/)|1999|1080P|x264|ES|NA|PG|
-|[星球大战前传2：克隆人战争](https://movie.douban.com/subject/1297785/)|2002|1080P|x264|NA|NA|PG|
-|[星球大战前传3：西斯的复仇](https://movie.douban.com/subject/1309078/)|2005|1080P|x264|ES|NA|PG-13|
-|[星球大战4：新希望](https://movie.douban.com/subject/1293838/)|1977|HDTV|x264|NA|NA|PG|
-|[星球大战5：帝国反击战](https://movie.douban.com/subject/1296528/)|1980|HDTV|x264|NA|NA|PG|
-|[星球大战6：绝地归来](https://movie.douban.com/subject/1297151/)|1983|HDTV|x264|NA|NA|PG|
-|[星球大战7：原力觉醒](https://movie.douban.com/subject/20326665/)|2015|1080P|x264|HD|7.1|PG-13|
-|[星球大战8：最后的绝地武士](https://movie.douban.com/subject/22265634/)|2017|1080P|x264|NA|NA|PG-13|
-|[星球大战9：天行者崛起](https://movie.douban.com/subject/22265687/)|2019|1080P|x264|HD|7.1|PG-13|
-|[霍比特人1：意外之旅](https://movie.douban.com/subject/1966182/)|2012|1080P|x264|DTS|NA|PG-13|
-|[霍比特人2：史矛革之战](https://movie.douban.com/celebrity/1049500/)|2013|1080P|x264|NA|NA|PG-13|
-|[霍比特人3：五军之战](https://movie.douban.com/subject/2973079/)|2014|1080P|x264|NA|NA|R|
+|片名|年份|清晰度|格式|DTS|DD|分级|IMDb|
+|----|----|:----:|----|:-:|:-:|:-:|:-:|
+|[侠盗一号](https://movie.douban.com/subject/25894431/)|2016|1080P|x264|HD|7.1|PG-13|7.8|
+|[游侠索罗](https://movie.douban.com/subject/25900947/)|2018|1080P|x264|HD|NA|PG-13|6.9|
+|[星球大战前传1：魅影危机](https://movie.douban.com/subject/1294362/)|1999|1080P|x264|ES|NA|PG|6.5|
+|[星球大战前传2：克隆人战争](https://movie.douban.com/subject/1297785/)|2002|1080P|x264|NA|NA|PG|6.5|
+|[星球大战前传3：西斯的复仇](https://movie.douban.com/subject/1309078/)|2005|1080P|x264|ES|NA|PG-13|7.5|
+|[星球大战4：新希望](https://movie.douban.com/subject/1293838/)|1977|HDTV|x264|NA|NA|PG|8.6|
+|[星球大战5：帝国反击战](https://movie.douban.com/subject/1296528/)|1980|HDTV|x264|NA|NA|PG|8.7|
+|[星球大战6：绝地归来](https://movie.douban.com/subject/1297151/)|1983|HDTV|x264|NA|NA|PG|8.3|
+|[星球大战7：原力觉醒](https://movie.douban.com/subject/20326665/)|2015|1080P|x264|HD|7.1|PG-13|7.9|
+|[星球大战8：最后的绝地武士](https://movie.douban.com/subject/22265634/)|2017|1080P|x264|NA|NA|PG-13|7.0|
+|[星球大战9：天行者崛起](https://movie.douban.com/subject/22265687/)|2019|1080P|x264|HD|7.1|PG-13|6.7|
+|[霍比特人1：意外之旅](https://movie.douban.com/subject/1966182/)|2012|1080P|x264|DTS|NA|PG-13|7.8|
+|[霍比特人2：史矛革之战](https://movie.douban.com/celebrity/1049500/)|2013|1080P|x264|NA|NA|PG-13|7.8|
+|[霍比特人3：五军之战](https://movie.douban.com/subject/2973079/)|2014|1080P|x264|NA|NA|R|7.4|
 |[2001太空奥德赛](https://movie.douban.com/subject/1292226/)|1968|1080P|x264|DTS|NA|G|
 |[阿波罗11](https://movie.douban.com/subject/30390701/)|2019|1080P|x264|HD|5.1|G|
 |[复仇者联盟：终局之战](https://movie.douban.com/subject/26100958/)|2019|1080P|x264|HD|7.1|PG-13|
