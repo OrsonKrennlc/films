@@ -9,84 +9,84 @@
 
 ## 电影
 
-|片名| 年份|清晰度|格式|DTS|DD|分级|
-|-|-|:-:|-|:-:|:-:|:-:|
-|侠盗一号|2016|1080P|x264|HD|7.1|PG-13|
-|游侠索罗|2018|1080P|x264|HD|NA|PG-13|
-|星球大战前传1：魅影危机|1999|1080P|x264|ES|NA|PG|
-|星球大战前传2：克隆人战争|2002|1080P|x264|NA|NA|PG|
-|星球大战前传3：西斯的复仇|2005|1080P|x264|ES|NA|PG-13|
-|星球大战4：新希望|1977|HDTV|x264|NA|NA|PG|
-|星球大战5：帝国反击战|1980|HDTV|x264|NA|NA|PG|
-|星球大战6：绝地归来|1983|HDTV|x264|NA|NA|PG|
-|[星球大战7：原力觉醒](https://orsonkrennlc.github.io/films/SW7)|2015|1080P|x264|HD|7.1|PG-13|
-|[星球大战8：最后的绝地武士](https://orsonkrennlc.github.io/films/SW8)|2017|1080P|x264|NA|NA|PG-13|
-|[星球大战9：天行者崛起](https://orsonkrennlc.github.io/films/SW9)|2019|1080P|x264|HD|7.1|PG-13|
-|霍比特人1：意外之旅|2012|1080P|x264|DTS|NA|PG-13|
-|霍比特人2：史矛革之战|2013|1080P|x264|NA|NA|PG-13|
-|霍比特人3：五军之战|2014|1080P|x264|NA|NA|R|
-|2001太空奥德赛|1968|1080P|x264|DTS|NA|G|
-|阿波罗11|2019|1080P|x264|HD|5.1|G|
-|复仇者联盟：终局之战|2019|1080P|x264|HD|7.1|PG-13|
-|银翼杀手2049|2017|1080P|x264|HD|7.1|R|
-|何以为家|2018|1080P|x264|NA|NA|R|
-|云图|2012|720P|x264|NA|NA|R|
-|卑鄙的我3|2017|4K HDR 10bit|x265|DTS-X|7.1|PG|
-|五十度灰|2015|4K HDR 10bit|x265|DTS-X|7.1|R|
-|五十度黑|2017|1080P|x264|DTS-X|7.1|R|
-|五十度飞|2018|1080P|x264|DTS-X|7.1|R|
-|太空第一人|2018|1080P|x264|HD|7.1|PG-13|
-|攻壳机动队|2017|4K HDR 10bit|x265|TrueHD|7.1|PG-13|
-|驯龙高手3：隐秘的世界|2019|1080P|x264|DTS|NA|PG|
-|星际穿越|2014|1080P|x264|NA|NA|PG-13|
-|太空旅客|2016|4K HDR 10bit|x265|NA|5.1|PG-13|
-|大空头|2015|1080P|x264|NA|NA|R|
-|火星救援|2015|1080P|x264|NA|NA|PG-13|
-|华尔街之狼|2013|720P|x264|DTS|NA|R|
-|星际特工：千星之城|2017|1080P|x264|NA|NA|PG-13|
-|了不起的盖茨比|2013|4K|x265|NA|NA|PG-13|
-|玩具总动员4|2019|4K HDR 10bit|x265|TrueHD|7.1|G|
-|波西米亚狂想曲|2018|1080P|x264|HD|7.1|PG-13|
-|敦刻尔克|2017|4K HDR 10bit|x265|HD|5.1|PG-13|
-|荒野猎人|2015|1080P|x264|HD|7.1|R|
-|教宗的承继|2019|1080P|x264|NA|5.1|PG-13|
-|爱乐之城|2016|1080P|x264|HD|7.1|PG-13|
-|星际探索|2019|1080P|x264|HD|7.1|PG-13|
-|小丑|2019|1080P|x264|HD|7.1|R|
-|寄生虫|2019|1080P|x264|TrueHD|7.1|R|
-|好莱坞往事|2019|1080P|x264|HD|5.1|R
-|决战中途岛|2019|1080P|x264|NA|NA|PG-13|
-|痛苦与荣耀|2019|1080P|x264|HD|5.1|R|
-|爱尔兰人|2019|1080P|x264|NA|5.1|R|
-|无耻混蛋|2009|1080P|x264|DTS|NA|R|
-|利刃出鞘|2019|1080P|x264|NA|5.1|PG-13|
-|双子杀手|2019|1080P|x264|HD|7.1|PG-13|
-|头号玩家|2018|1080P|x264|HD|7.1|PG-13|
-|乔乔的异想世界|2019|1080P|x264|HD|5.1|PG-13|
-|黑水|2019|1080P|x264|DTS|5.1|R|
-|冰雪奇缘1|2013|4K HDR 10bit|x265|TrueHD|7.1|PG|
-|冰雪奇缘2|2019|1080P|x264|HD|7.1|PG|
-|琼斯先生|2019|1080P|x264|HD|7.1|R|
-|1917|2019|1080P|x264|HD|7.1|R|
-|卡萨布兰卡|1942|1080P|x264|NA|NA|PG|
-|辛德勒的名单|1993|1080P|x264|NA|NA|R|
-|007：大破天幕杀机|2012|1080P|x264|HD|5.1|PG-13|
-|007：幽灵党|2017|1080P|x264|HD|7.1|PG-13|
-|绿皮书|2018|1080P|x264|NA|5.1|PG-13|
-|疯狂动物城|2016|1080P|x264|HD|7.1|PG|
-|金陵十三钗|2011|1080P|x264|NA|5.1|R|
-|寻梦环游记|2017|4K SDR 8bit|x265|TrueHD|7.1|PG|
-|至暗时刻|2017|1080P|x264|HD|7.1|PG-13|
-|阿黛尔的生活|2013|1080P|x264|NA|5.1|NC-17|
-|布达佩斯大饭店|2014|1080P|x264|HD|5.1|R|
-|大电站|2013|720P|x264|NA|NA|NC-17|
-|女仆日记|2015|1080P|x264|NA|NA|R|
-|玫瑰信贷|2010|HDRip|NA|NA|NA|NC-17|
-|去南方|2009|DVDRip|NA|NA|NA|NC-17|
-|鲁贝之灯|2019|1080P|x264|NA|NA|PG-13|
-|小妇人|2019|1080P 10bit|x265|HD|5.1|PG|
-|龙虾|2015|1080P|x264|HD|5.1|R|
-|九品芝麻官|1994|1080P|x264|NA|5.1|PG-13|
+|片名|年份|清晰度|格式|DTS|DD|分级|
+|----|----|:----:|----|:-:|:-:|:-:|
+|[侠盗一号](https://movie.douban.com/subject/25894431/)|2016|1080P|x264|HD|7.1|PG-13|
+|[游侠索罗](https://movie.douban.com/subject/25900947/)|2018|1080P|x264|HD|NA|PG-13|
+|[星球大战前传1：魅影危机](https://movie.douban.com/subject/1294362/)|1999|1080P|x264|ES|NA|PG|
+|[星球大战前传2：克隆人战争](https://movie.douban.com/subject/1297785/)|2002|1080P|x264|NA|NA|PG|
+|[星球大战前传3：西斯的复仇](https://movie.douban.com/subject/1309078/)|2005|1080P|x264|ES|NA|PG-13|
+|[星球大战4：新希望](https://movie.douban.com/subject/1293838/)|1977|HDTV|x264|NA|NA|PG|
+|[星球大战5：帝国反击战](https://movie.douban.com/subject/1296528/)|1980|HDTV|x264|NA|NA|PG|
+|[星球大战6：绝地归来](https://movie.douban.com/subject/1297151/)|1983|HDTV|x264|NA|NA|PG|
+|[星球大战7：原力觉醒](https://movie.douban.com/subject/20326665/)|2015|1080P|x264|HD|7.1|PG-13|
+|[星球大战8：最后的绝地武士](https://movie.douban.com/subject/22265634/)|2017|1080P|x264|NA|NA|PG-13|
+|[星球大战9：天行者崛起](https://movie.douban.com/subject/22265687/)|2019|1080P|x264|HD|7.1|PG-13|
+|[霍比特人1：意外之旅](https://movie.douban.com/subject/1966182/)|2012|1080P|x264|DTS|NA|PG-13|
+|[霍比特人2：史矛革之战](https://movie.douban.com/celebrity/1049500/)|2013|1080P|x264|NA|NA|PG-13|
+|[霍比特人3：五军之战](https://movie.douban.com/subject/2973079/)|2014|1080P|x264|NA|NA|R|
+|[2001太空奥德赛](https://movie.douban.com/subject/1292226/)|1968|1080P|x264|DTS|NA|G|
+|[阿波罗11](https://movie.douban.com/subject/30390701/)|2019|1080P|x264|HD|5.1|G|
+|[复仇者联盟：终局之战](https://movie.douban.com/subject/26100958/)|2019|1080P|x264|HD|7.1|PG-13|
+|[银翼杀手2049](https://movie.douban.com/subject/10512661/)|2017|1080P|x264|HD|7.1|R|
+|[何以为家](https://movie.douban.com/subject/30170448/)|2018|1080P|x264|NA|NA|R|
+|[云图](https://movie.douban.com/subject/3530403/)|2012|720P|x264|NA|NA|R|
+|[卑鄙的我3](https://movie.douban.com/subject/25812712/)|2017|4K HDR 10bit|x265|DTS-X|7.1|PG|
+|[五十度灰](https://movie.douban.com/subject/11541363/)|2015|4K HDR 10bit|x265|DTS-X|7.1|R|
+|[五十度黑](https://movie.douban.com/subject/26323031/)|2017|1080P|x264|DTS-X|7.1|R|
+|[五十度飞](https://movie.douban.com/subject/26323032/)|2018|1080P|x264|DTS-X|7.1|R|
+|[太空第一人](https://movie.douban.com/subject/3026559/)|2018|1080P|x264|HD|7.1|PG-13|
+|[攻壳机动队](https://movie.douban.com/subject/25818101/)|2017|4K HDR 10bit|x265|TrueHD|7.1|PG-13|
+|[驯龙高手3：隐秘的世界](https://movie.douban.com/subject/19899707/)|2019|1080P|x264|DTS|NA|PG|
+|[星际穿越](https://movie.douban.com/subject/1889243/)|2014|1080P|x264|NA|NA|PG-13|
+|[太空旅客](https://movie.douban.com/subject/3434070/)|2016|4K HDR 10bit|x265|NA|5.1|PG-13|
+|[大空头](https://movie.douban.com/subject/26303622/)|2015|1080P|x264|NA|NA|R|
+|[火星救援](https://movie.douban.com/subject/25864085/)|2015|1080P|x264|NA|NA|PG-13|
+|[华尔街之狼](https://movie.douban.com/subject/2997076/)|2013|720P|x264|DTS|NA|R|
+|[星际特工：千星之城](https://movie.douban.com/subject/11502973/)|2017|1080P|x264|NA|NA|PG-13|
+|[了不起的盖茨比](https://movie.douban.com/subject/3364223/)|2013|4K|x265|NA|NA|PG-13|
+|[玩具总动员4](https://movie.douban.com/subject/6850547/)|2019|4K HDR 10bit|x265|TrueHD|7.1|G|
+|[波西米亚狂想曲](https://movie.douban.com/subject/5300054/)|2018|1080P|x264|HD|7.1|PG-13|
+|[敦刻尔克](https://movie.douban.com/subject/26607693/)|2017|4K HDR 10bit|x265|HD|5.1|PG-13|
+|[荒野猎人](https://movie.douban.com/subject/5327268/)|2015|1080P|x264|HD|7.1|R|
+|[教宗的承继](https://movie.douban.com/subject/27132510/)|2019|1080P|x264|NA|5.1|PG-13|
+|[爱乐之城](https://movie.douban.com/subject/25934014/)|2016|1080P|x264|HD|7.1|PG-13|
+|[星际探索](https://movie.douban.com/subject/24716039/)|2019|1080P|x264|HD|7.1|PG-13|
+|[小丑](https://movie.douban.com/subject/27119724/)|2019|1080P|x264|HD|7.1|R|
+|[寄生虫](https://movie.douban.com/subject/27010768/)|2019|1080P|x264|TrueHD|7.1|R|
+|[好莱坞往事](https://movie.douban.com/subject/27087724/)|2019|1080P|x264|HD|5.1|R
+|[决战中途岛](https://movie.douban.com/subject/26786669/)|2019|1080P|x264|NA|NA|PG-13|
+|[痛苦与荣耀](https://movie.douban.com/subject/30198539/)|2019|1080P|x264|HD|5.1|R|
+|[爱尔兰人](https://movie.douban.com/subject/6981153/)|2019|1080P|x264|NA|5.1|R|
+|[无耻混蛋](https://movie.douban.com/subject/1438652/)|2009|1080P|x264|DTS|NA|R|
+|[利刃出鞘](https://movie.douban.com/subject/30318116/)|2019|1080P|x264|NA|5.1|PG-13|
+|[双子杀手](https://movie.douban.com/subject/3097572/)|2019|1080P|x264|HD|7.1|PG-13|
+|[头号玩家](https://movie.douban.com/subject/4920389/)|2018|1080P|x264|HD|7.1|PG-13|
+|[乔乔的异想世界](https://movie.douban.com/subject/30170546/)|2019|1080P|x264|HD|5.1|PG-13|
+|[黑水](https://movie.douban.com/subject/30331959/)|2019|1080P|x264|DTS|5.1|R|
+|[冰雪奇缘1](https://movie.douban.com/subject/4202982/)|2013|4K HDR 10bit|x265|TrueHD|7.1|PG|
+|[冰雪奇缘2](https://movie.douban.com/subject/25887288/)|2019|1080P|x264|HD|7.1|PG|
+|[琼斯先生](https://movie.douban.com/subject/30167512/)|2019|1080P|x264|HD|7.1|R|
+|[1917](https://movie.douban.com/subject/30252495/)|2019|1080P|x264|HD|7.1|R|
+|[卡萨布兰卡](https://movie.douban.com/subject/1296753/)|1942|1080P|x264|NA|NA|PG|
+|[辛德勒的名单](https://movie.douban.com/subject/1295124/)|1993|1080P|x264|NA|NA|R|
+|[007：大破天幕杀机](https://movie.douban.com/subject/2363876/)|2012|1080P|x264|HD|5.1|PG-13|
+|[007：幽灵党](https://movie.douban.com/subject/11620560/)|2017|1080P|x264|HD|7.1|PG-13|
+|[绿皮书](https://movie.douban.com/subject/27060077/)|2018|1080P|x264|NA|5.1|PG-13|
+|[疯狂动物城](https://movie.douban.com/subject/25662329/)|2016|1080P|x264|HD|7.1|PG|
+|[金陵十三钗](https://movie.douban.com/subject/3649049/)|2011|1080P|x264|NA|5.1|R|
+|[寻梦环游记](https://movie.douban.com/subject/20495023/)|2017|4K SDR 8bit|x265|TrueHD|7.1|PG|
+|[至暗时刻](https://movie.douban.com/subject/26761416/)|2017|1080P|x264|HD|7.1|PG-13|
+|[阿黛尔的生活](https://movie.douban.com/subject/10535568/)|2013|1080P|x264|NA|5.1|NC-17|
+|[布达佩斯大饭店](https://movie.douban.com/subject/11525673/)|2014|1080P|x264|HD|5.1|R|
+|[大电站](https://movie.douban.com/subject/19949238/)|2013|720P|x264|NA|NA|NC-17|
+|[女仆日记](https://movie.douban.com/subject/21625070/)|2015|1080P|x264|NA|NA|R|
+|[玫瑰信贷](https://movie.douban.com/subject/4924719/)|2010|HDRip|NA|NA|NA|NC-17|
+|[去南方](https://movie.douban.com/subject/3708001/)|2009|DVDRip|NA|NA|NA|NC-17|
+|[鲁贝之灯](https://movie.douban.com/subject/30209086/)|2019|1080P|x264|NA|NA|PG-13|
+|[小妇人](https://movie.douban.com/subject/26348103/)|2019|1080P 10bit|x265|HD|5.1|PG|
+|[龙虾](https://movie.douban.com/subject/20514947/)|2015|1080P|x264|HD|5.1|R|
+|[九品芝麻官](https://movie.douban.com/subject/1297518/)|1994|1080P|x264|NA|5.1|R|
 
 共计76部
 
