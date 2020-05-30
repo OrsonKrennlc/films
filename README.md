@@ -25,8 +25,8 @@
 |[霍比特人1：意外之旅](https://movie.douban.com/subject/1966182/)|2012|1080P|x264|DTS|NA|PG-13|7.8|
 |[霍比特人2：史矛革之战](https://movie.douban.com/celebrity/1049500/)|2013|1080P|x264|NA|NA|PG-13|7.8|
 |[霍比特人3：五军之战](https://movie.douban.com/subject/2973079/)|2014|1080P|x264|NA|NA|R|7.4|
-|[2001太空奥德赛](https://movie.douban.com/subject/1292226/)|1968|1080P|x264|DTS|NA|G|
-|[阿波罗11](https://movie.douban.com/subject/30390701/)|2019|1080P|x264|HD|5.1|G|
+|[2001太空奥德赛](https://movie.douban.com/subject/1292226/)|1968|1080P|x264|DTS|NA|G|8.3|
+|[阿波罗11](https://movie.douban.com/subject/30390701/)|2019|1080P|x264|HD|5.1|G|8.2|
 |[复仇者联盟：终局之战](https://movie.douban.com/subject/26100958/)|2019|1080P|x264|HD|7.1|PG-13|
 |[银翼杀手2049](https://movie.douban.com/subject/10512661/)|2017|1080P|x264|HD|7.1|R|
 |[何以为家](https://movie.douban.com/subject/30170448/)|2018|1080P|x264|NA|NA|R|
