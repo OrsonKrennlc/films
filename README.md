@@ -87,8 +87,9 @@
 |[小妇人](https://movie.douban.com/subject/26348103/)|2019|1080P 10bit|x265|HD|5.1|PG|
 |[龙虾](https://movie.douban.com/subject/20514947/)|2015|1080P|x264|HD|5.1|R|
 |[九品芝麻官](https://movie.douban.com/subject/1297518/)|1994|1080P|x264|NA|5.1|R|
+|[我妻子的罗曼史](https://movie.douban.com/subject/5413752/)|2011|DVDRip|NA|NA|NA|R|5.7|
 
-共计76部
+共计77部
 
 <center>Made by OrsonKrennlc with ❤️</center>
 
