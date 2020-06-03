@@ -89,7 +89,7 @@
 |[九品芝麻官](https://movie.douban.com/subject/1297518/)|1994|1080P|x264|NA|5.1|R|
 |[我妻子的罗曼史](https://movie.douban.com/subject/5413752/)|2011|DVDRip|NA|NA|NA|R|5.7|
 |[燃烧的女子肖像](https://movie.douban.com/subject/30257175/)|2019|1080P 10bit|x265|NA|5.1|R|8.1|
-|[极速车王](https://movie.douban.com/subject/6538866/)|1080P|x264|HD|7.1|PG-13|8.1|
+|[极速车王](https://movie.douban.com/subject/6538866/)|2019|1080P|x264|HD|7.1|PG-13|8.1|
 
 共计79部
 
