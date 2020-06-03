@@ -90,8 +90,11 @@
 |[我妻子的罗曼史](https://movie.douban.com/subject/5413752/)|2011|DVDRip|NA|NA|NA|R|5.7|
 |[燃烧的女子肖像](https://movie.douban.com/subject/30257175/)|2019|1080P 10bit|x265|NA|5.1|R|8.1|
 |[极速车王](https://movie.douban.com/subject/6538866/)|2019|1080P|x264|HD|7.1|PG-13|8.1|
+|[教父1](https://movie.douban.com/subject/1291841/)|1972|1080P|x264|TrueHD|5.1|R|9.2|
+|[教父2](https://movie.douban.com/subject/1299131/)|1974|1080P|x264|TrueHD|5.1|R|9.0|
+|[教父3](https://movie.douban.com/subject/1294240/)|1990|1080P|x264|DTS|5.1|R|7.6|
 
-共计79部
+共计82部
 
 <center>Made by OrsonKrennlc with ❤️</center>
 
