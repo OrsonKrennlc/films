@@ -27,11 +27,11 @@
 |[霍比特人3：五军之战](https://movie.douban.com/subject/2973079/)|2014|1080P|x264|NA|NA|R|7.4|
 |[2001太空奥德赛](https://movie.douban.com/subject/1292226/)|1968|1080P|x264|DTS|NA|G|8.3|
 |[阿波罗11](https://movie.douban.com/subject/30390701/)|2019|1080P|x264|HD|5.1|G|8.2|
-|[复仇者联盟：终局之战](https://movie.douban.com/subject/26100958/)|2019|1080P|x264|HD|7.1|PG-13|
-|[银翼杀手2049](https://movie.douban.com/subject/10512661/)|2017|1080P|x264|HD|7.1|R|
-|[何以为家](https://movie.douban.com/subject/30170448/)|2018|1080P|x264|NA|NA|R|
-|[云图](https://movie.douban.com/subject/3530403/)|2012|720P|x264|NA|NA|R|
-|[卑鄙的我3](https://movie.douban.com/subject/25812712/)|2017|4K HDR 10bit|x265|DTS-X|7.1|PG|
+|[复仇者联盟：终局之战](https://movie.douban.com/subject/26100958/)|2019|1080P|x264|HD|7.1|PG-13|8.4|
+|[银翼杀手2049](https://movie.douban.com/subject/10512661/)|2017|1080P|x264|HD|7.1|R|8.0|
+|[何以为家](https://movie.douban.com/subject/30170448/)|2018|1080P|x264|NA|NA|R|8.4|
+|[云图](https://movie.douban.com/subject/3530403/)|2012|720P|x264|NA|NA|R|7.4|
+|[卑鄙的我3](https://movie.douban.com/subject/25812712/)|2017|4K HDR 10bit|x265|DTS-X|7.1|PG|6.3|
 |[五十度灰](https://movie.douban.com/subject/11541363/)|2015|4K HDR 10bit|x265|DTS-X|7.1|R|
 |[五十度黑](https://movie.douban.com/subject/26323031/)|2017|1080P|x264|DTS-X|7.1|R|
 |[五十度飞](https://movie.douban.com/subject/26323032/)|2018|1080P|x264|DTS-X|7.1|R|
