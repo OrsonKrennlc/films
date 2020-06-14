@@ -93,7 +93,7 @@
 |[教父1](https://movie.douban.com/subject/1291841/)|1972|1080P|x264|TrueHD|5.1|R|9.2|
 |[教父2](https://movie.douban.com/subject/1299131/)|1974|1080P|x264|TrueHD|5.1|R|9.0|
 |[教父3](https://movie.douban.com/subject/1294240/)|1990|1080P|x264|DTS|5.1|R|7.6|
-|[阿甘正传](https://movie.douban.com/subject/1292720/)|1994|1080P|x264|DTS|PG-13|8.8|
+|[阿甘正传](https://movie.douban.com/subject/1292720/)|1994|1080P|x264|DTS|NA|PG-13|8.8|
 
 共计83部
 
