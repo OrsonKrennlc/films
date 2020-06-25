@@ -94,8 +94,9 @@
 |[教父2](https://movie.douban.com/subject/1299131/)|1974|1080P|x264|TrueHD|5.1|R|9.0|
 |[教父3](https://movie.douban.com/subject/1294240/)|1990|1080P|x264|DTS|5.1|R|7.6|
 |[阿甘正传](https://movie.douban.com/subject/1292720/)|1994|1080P|x264|DTS|NA|PG-13|8.8|
+|[天气之子](https://movie.douban.com/subject/30402296/)|2019|4K 10bit|HEVC|NA|NA|PG-13|7.6|
 
-共计83部
+共计84部
 
 <center>Made by OrsonKrennlc with ❤️</center>
 
