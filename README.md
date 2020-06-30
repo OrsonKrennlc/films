@@ -98,7 +98,7 @@
 |[流浪地球](https://movie.douban.com/subject/26266893/)|2019|WEB-DL|x264|5.1|NA|PG-13|6.0|
 |[一天](https://movie.douban.com/subject/4191644/)|2011|1080P|x264|NA|DTS|PG-13|7.0
 
-共计85部
+共计86部
 
 <center>Made by OrsonKrennlc with ❤️</center>
 
