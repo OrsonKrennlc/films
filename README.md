@@ -95,8 +95,10 @@
 |[教父3](https://movie.douban.com/subject/1294240/)|1990|1080P|x264|DTS|5.1|R|7.6|
 |[阿甘正传](https://movie.douban.com/subject/1292720/)|1994|1080P|x264|DTS|NA|PG-13|8.8|
 |[天气之子](https://movie.douban.com/subject/30402296/)|2019|4K 10bit|HEVC|NA|NA|PG-13|7.6|
+|[流浪地球](https://movie.douban.com/subject/26266893/)|2019|WEB-DL|x264|5.1|NA|PG-13|6.0|
+|[一天](https://movie.douban.com/subject/4191644/)|2011|1080P|x264|NA|DTS|PG-13|7.0
 
-共计84部
+共计85部
 
 <center>Made by OrsonKrennlc with ❤️</center>
 
