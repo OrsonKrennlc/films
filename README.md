@@ -99,8 +99,10 @@
 |[一天](https://movie.douban.com/subject/4191644/)|2011|1080P|x264|NA|DTS|PG-13|7.0|
 |[午夜巴黎](https://movie.douban.com/subject/4319218/)|2011|1080P|x264|NA|DTS|PG-13|7.7|
 |[末代皇帝](https://movie.douban.com/subject/1293172/)|1987|720P|x264|NA|NA|R|7.7|
+|[西西里的美丽传说](https://movie.douban.com/subject/1292402/)|2000|1080P|x264|NA|DTS|NC-17|7.5|
+|[海上钢琴师](https://movie.douban.com/subject/1292001/)|1998|1080P|x264|NA|DTS|R|8.1|
 
-共计88部
+共计90部
 
 <center>Made by OrsonKrennlc with ❤️</center>
 
