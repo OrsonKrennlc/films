@@ -38,7 +38,7 @@
 |[太空第一人](https://movie.douban.com/subject/3026559/)|2018|1080P|x264|HD|7.1|PG-13|
 |[攻壳机动队](https://movie.douban.com/subject/25818101/)|2017|4K HDR 10bit|x265|TrueHD|7.1|PG-13|
 |[驯龙高手3：隐秘的世界](https://movie.douban.com/subject/19899707/)|2019|1080P|x264|DTS|NA|PG|
-|[星际穿越](https://movie.douban.com/subject/1889243/)|2014|1080P|x264|NA|NA|PG-13|
+|[星际穿越](https://movie.douban.com/subject/1889243/)|2014|1080P|x264|DTS|NA|PG-13|
 |[太空旅客](https://movie.douban.com/subject/3434070/)|2016|4K HDR 10bit|x265|NA|5.1|PG-13|
 |[大空头](https://movie.douban.com/subject/26303622/)|2015|1080P|x264|NA|NA|R|
 |[火星救援](https://movie.douban.com/subject/25864085/)|2015|1080P|x264|NA|NA|PG-13|
