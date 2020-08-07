@@ -101,13 +101,14 @@
 |[末代皇帝](https://movie.douban.com/subject/1293172/)|1987|720P|x264|NA|NA|R|7.7|
 |[西西里的美丽传说](https://movie.douban.com/subject/1292402/)|2000|1080P|x264|NA|DTS|NC-17|7.5|
 |[海上钢琴师](https://movie.douban.com/subject/1292001/)|1998|1080P|x264|NA|DTS|R|8.1|
+|[奸臣](https://movie.douban.com/subject/25823840/)|2015|1080P|x264|NA|NA|NC-17|6.1|
 |[星际迷航1：无限太空](https://movie.douban.com/subject/1300089/)|1979|1080P|x264|NA|NA|G|6.4|
 |[星际迷航2：可汗之怒](https://movie.douban.com/subject/1293316/)|1982|1080P|x264|NA|NA|PG|7.7|
 |[星际迷航3：石破天惊](https://movie.douban.com/subject/1294015/)|1984|1080P|x264|NA|NA|PG|6.7|
 |[星际迷航4：抢救未来](https://movie.douban.com/subject/1293325/)|1986|1080P|x264|NA|NA|PG|7.3|
 |[灰猎犬号](https://movie.douban.com/subject/26871906/)|2020|4K|x265|5.1|NA|PG-13|7.1|
 
-共计95部
+共计96部
 
 <center>Made by OrsonKrennlc with ❤️</center>
 
