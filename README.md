@@ -76,7 +76,7 @@
 |[疯狂动物城](https://movie.douban.com/subject/25662329/)|2016|1080P|x264|HD|7.1|PG|8.0|
 |[金陵十三钗](https://movie.douban.com/subject/3649049/)|2011|1080P|x264|NA|5.1|R|7.6|
 |[寻梦环游记](https://movie.douban.com/subject/20495023/)|2017|4K SDR 8bit|x265|TrueHD|7.1|PG|8.4|
-|[至暗时刻](https://movie.douban.com/subject/26761416/)|2017|1080P|x264|HD|7.1|PG-13|2017|7.4|
+|[至暗时刻](https://movie.douban.com/subject/26761416/)|2017|1080P|x264|HD|7.1|PG-13|7.4|
 |[阿黛尔的生活](https://movie.douban.com/subject/10535568/)|2013|1080P|x264|NA|5.1|NC-17|7.7|
 |[布达佩斯大饭店](https://movie.douban.com/subject/11525673/)|2014|1080P|x264|HD|5.1|R|8.1|
 |[大电站](https://movie.douban.com/subject/19949238/)|2013|720P|x264|NA|NA|NC-17|6.2|
