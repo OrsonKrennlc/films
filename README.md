@@ -168,10 +168,10 @@
 |[星际迷航5：终极先锋](https://movie.douban.com/subject/1302570/)|1989|1080P|x264|NA|NA|PG|5.5|
 |[灰猎犬号](https://movie.douban.com/subject/26871906/)|2020|4K|x265|NA|5.1|PG-13|7.1|
 |[信条](https://movie.douban.com/subject/30444960/)|2020|4k120|x265|NA|NA|PG-13|7.5|
-|[神奇女侠1984](https://movie.douban.com/subject/27073752/)|1080P|x264|NA|5.1|PG-13|5.4|
-|[爱情终点站](https://movie.douban.com/subject/1292274/)|1080P|x264|NA|NA|PG-13|7.4|
-|[疯狂原始人2](https://movie.douban.com/subject/24298954/)|4kHDR|x265|HD|7.1|PG|7.0|
-|[心灵奇旅](https://movie.douban.com/subject/24733428/)|4k|x265|YA|5.1|PG|8.1|
+|[神奇女侠1984](https://movie.douban.com/subject/27073752/)|2020|1080P|x264|NA|5.1|PG-13|5.4|
+|[爱情终点站](https://movie.douban.com/subject/1292274/)|2004|1080P|x264|NA|NA|PG-13|7.4|
+|[疯狂原始人2](https://movie.douban.com/subject/24298954/)|2020|4kHDR|x265|HD|7.1|PG|7.0|
+|[心灵奇旅](https://movie.douban.com/subject/24733428/)|2020|4k|x265|YA|5.1|PG|8.1|
 
 共计100部
 
