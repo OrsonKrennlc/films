@@ -69,6 +69,7 @@
 |[1917](https://movie.douban.com/subject/30252495/)|2019|1080P|x264|HD|7.1|R|
 |[卡萨布兰卡](https://movie.douban.com/subject/1296753/)|1942|1080P|x264|NA|NA|PG|
 |[辛德勒的名单](https://movie.douban.com/subject/1295124/)|1993|1080P|x264|NA|NA|R|
+|[007：大破量子危机](https://movie.douban.com/subject/1946882/)|2008|4kHDR|x265|HD|5.1|PG-13|6.6|
 |[007：大破天幕杀机](https://movie.douban.com/subject/2363876/)|2012|1080P|x264|HD|5.1|PG-13|
 |[007：幽灵党](https://movie.douban.com/subject/11620560/)|2017|1080P|x264|HD|7.1|PG-13|
 |[绿皮书](https://movie.douban.com/subject/27060077/)|2018|1080P|x264|NA|5.1|PG-13|
@@ -113,8 +114,11 @@
 |[爱情终点站](https://movie.douban.com/subject/1292274/)|2004|1080P|x264|NA|NA|PG-13|7.4|
 |[疯狂原始人2](https://movie.douban.com/subject/24298954/)|2020|4kHDR|x265|HD|7.1|PG|7.0|
 |[心灵奇旅](https://movie.douban.com/subject/24733428/)|2020|4k|x265|YA|5.1|PG|8.1|
+|[罗马的房子](https://movie.douban.com/subject/3431336/)|2010|1080P|x264|NA|NA|R|6.1|
+|[罗马](https://movie.douban.com/subject/1950330/)|2018|1080PHDR|x265|NA|5.1|R|7.1|
+|[饥饿站台](https://movie.douban.com/subject/34805219/)|2019|1080P|x264|NA|NA|R|7.0|
 
-共计102部
+共计106部
 
 ## 纪录片
 
@@ -143,6 +147,11 @@
 
 共计7部
 
+## 电视剧
+
+|片名|年份|清晰度|分级|IMDb|
+|----|----|:----:|:-:|:-:|
+|权力的游戏 第一季|
 
 <center>Made by OrsonKrennlc with ❤️</center>
 
