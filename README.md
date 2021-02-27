@@ -113,12 +113,20 @@
 |[神奇女侠1984](https://movie.douban.com/subject/27073752/)|2020|1080P|x264|NA|5.1|PG-13|5.4|
 |[爱情终点站](https://movie.douban.com/subject/1292274/)|2004|1080P|x264|NA|NA|PG-13|7.4|
 |[疯狂原始人2](https://movie.douban.com/subject/24298954/)|2020|4kHDR|x265|HD|7.1|PG|7.0|
-|[心灵奇旅](https://movie.douban.com/subject/24733428/)|2020|4k|x265|YA|5.1|PG|8.1|
+|[心灵奇旅](https://movie.douban.com/subject/24733428/)|2020|4k|x265|YE|5.1|PG|8.1|
 |[罗马的房子](https://movie.douban.com/subject/3431336/)|2010|1080P|x264|NA|NA|R|6.1|
 |[罗马](https://movie.douban.com/subject/1950330/)|2018|1080PHDR|x265|NA|5.1|R|7.1|
 |[饥饿站台](https://movie.douban.com/subject/34805219/)|2019|1080P|x264|NA|NA|R|7.0|
+|[小姐](https://movie.douban.com/subject/25977027)|2007|1080P|x264|NA|NA|R|8.1|
+|[色，戒](https://movie.douban.com/subject/1828115)|2007|1080P|x264|HD|7.1|NC-17|7.5|
+|[梦戏巴黎](https://movie.douban.com/subject/1291856)|2003|1080P|x264|YE|NA|NC-17|7.2|
+|[情人](https://movie.douban.com/subject/1291868)|1992|1080P|x264|NA|NA|R|6.9|
+|[丹麦女孩](https://movie.douban.com/subject/3071604)|2015|1080P|x264|NA|5.1|R|7.1|
+|[卡罗尔](https://movie.douban.com/subject/10757577)|2015|1080P|x264|YE|NA|R|7.2|
+|[女性瘾者：第一部](https://movie.douban.com/subject/6827727)|2013|1080P|x264|NA|NA|NC-17|6.9|
+|[女性瘾者：第二部](https://movie.douban.com/subject/10792650)|2013|1080P|x264|NA|NA|NC-17|6.7|
 
-共计106部
+共计114部
 
 ## 纪录片
 
@@ -151,7 +159,18 @@
 
 |片名|年份|清晰度|分级|IMDb|
 |----|----|:----:|:-:|:-:|
-|权力的游戏 第一季|
+|权力的游戏：第一季|2011|720P|R|9.3|
+|权力的游戏：第二季|2012|720P|R|8.7|
+|权力的游戏：第三季|2013|720P|R|8.8|
+|权力的游戏：第四季|2014|720P|R|9.1|
+|权力的游戏：第五季|2015|720P|R|8.5|
+|权力的游戏：第六季|2016|720P|R|8.5|
+|权力的游戏：第七季|2017|720P|R|8.6|
+|权力的游戏：第八季|2019|720P|R|7.5|
+|青春猪头少年不会梦到兔女郎学姐|2018|1080P|PG|8.1|
+|我的大叔|2018|720P|PG-13|9.1|
+
+共计10部
 
 <center>Made by OrsonKrennlc with ❤️</center>
 
