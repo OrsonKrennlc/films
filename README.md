@@ -125,8 +125,12 @@
 |[卡罗尔](https://movie.douban.com/subject/10757577)|2015|1080P|x264|YE|NA|R|7.2|
 |[女性瘾者：第一部](https://movie.douban.com/subject/6827727)|2013|1080P|x264|NA|NA|NC-17|6.9|
 |[女性瘾者：第二部](https://movie.douban.com/subject/10792650)|2013|1080P|x264|NA|NA|NC-17|6.7|
+|[亲爱的同伙](https://movie.douban.com/subject/34749406/)|2019|1080P|x264|NA|NA|PG-13|7.3|
+|[寻龙传说](https://movie.douban.com/subject/34804147/)|2021|1080P|x264|NA|YE|PG|7.5|
+|[虎口脱险](https://movie.douban.com/subject/1296909/)|1966|1080P|x264|NA|NA|PG|8.0|
+|[面纱](https://movie.douban.com/subject/1441238/)|2006|1080P|x264|NA|NA|PG-13|7.5|
 
-共计114部
+共计118部
 
 ## 纪录片
 
@@ -169,8 +173,9 @@
 |权力的游戏：第八季|2019|720P|R|7.5|
 |青春猪头少年不会梦到兔女郎学姐|2018|1080P|PG|8.1|
 |我的大叔|2018|720P|PG-13|9.1|
+|切尔诺贝利|2019|1080P|R|9.4|
 
-共计10部
+共计11部
 
 <center>Made by OrsonKrennlc with ❤️</center>
 
