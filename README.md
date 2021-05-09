@@ -131,7 +131,7 @@
 |[面纱](https://movie.douban.com/subject/1441238/)|2006|1080P|x264|NA|NA|PG-13|7.5|
 |[波斯语课](https://movie.douban.com/subject/30466931/)|2020|1080P|NA|5.1|PG-13|7.4|
 
-共计118部
+共计119部
 
 ## 纪录片
 
@@ -177,7 +177,7 @@
 |切尔诺贝利|2019|1080P|R|9.4|
 |爱，死亡与机器人|2019|1080P|8.5|
 
-共计11部
+共计12部
 
 <center>Made by OrsonKrennlc with ❤️</center>
 
