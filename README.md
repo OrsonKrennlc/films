@@ -70,23 +70,23 @@
 |[卡萨布兰卡](https://movie.douban.com/subject/1296753/)|1942|1080P|x264|NA|NA|PG|8.5|
 |[辛德勒的名单](https://movie.douban.com/subject/1295124/)|1993|1080P|x264|NA|NA|R|8.9|
 |[007：大破量子危机](https://movie.douban.com/subject/1946882/)|2008|4kHDR|x265|HD|5.1|PG-13|6.6|
-|[007：大破天幕杀机](https://movie.douban.com/subject/2363876/)|2012|1080P|x264|HD|5.1|PG-13|
-|[007：幽灵党](https://movie.douban.com/subject/11620560/)|2017|1080P|x264|HD|7.1|PG-13|
-|[绿皮书](https://movie.douban.com/subject/27060077/)|2018|1080P|x264|NA|5.1|PG-13|
-|[疯狂动物城](https://movie.douban.com/subject/25662329/)|2016|1080P|x264|HD|7.1|PG|
-|[金陵十三钗](https://movie.douban.com/subject/3649049/)|2011|1080P|x264|NA|5.1|R|
-|[寻梦环游记](https://movie.douban.com/subject/20495023/)|2017|4K SDR 8bit|x265|TrueHD|7.1|PG|
-|[至暗时刻](https://movie.douban.com/subject/26761416/)|2017|1080P|x264|HD|7.1|PG-13|
-|[阿黛尔的生活](https://movie.douban.com/subject/10535568/)|2013|1080P|x264|NA|5.1|NC-17|
-|[布达佩斯大饭店](https://movie.douban.com/subject/11525673/)|2014|1080P|x264|HD|5.1|R|
-|[大电站](https://movie.douban.com/subject/19949238/)|2013|720P|x264|NA|NA|NC-17|
-|[女仆日记](https://movie.douban.com/subject/21625070/)|2015|1080P|x264|NA|NA|R|
-|[玫瑰信贷](https://movie.douban.com/subject/4924719/)|2010|HDRip|NA|NA|NA|NC-17|
-|[去南方](https://movie.douban.com/subject/3708001/)|2009|DVDRip|NA|NA|NA|NC-17|
-|[鲁贝之灯](https://movie.douban.com/subject/30209086/)|2019|1080P|x264|NA|NA|PG-13|
-|[小妇人](https://movie.douban.com/subject/26348103/)|2019|1080P 10bit|x265|HD|5.1|PG|
-|[龙虾](https://movie.douban.com/subject/20514947/)|2015|1080P|x264|HD|5.1|R|
-|[九品芝麻官](https://movie.douban.com/subject/1297518/)|1994|1080P|x264|NA|5.1|R|
+|[007：大破天幕杀机](https://movie.douban.com/subject/2363876/)|2012|1080P|x264|HD|5.1|PG-13|7.8|
+|[007：幽灵党](https://movie.douban.com/subject/11620560/)|2017|1080P|x264|HD|7.1|PG-13|6.8|
+|[绿皮书](https://movie.douban.com/subject/27060077/)|2018|1080P|x264|NA|5.1|PG-13|8.2|
+|[疯狂动物城](https://movie.douban.com/subject/25662329/)|2016|1080P|x264|HD|7.1|PG|8.0|
+|[金陵十三钗](https://movie.douban.com/subject/3649049/)|2011|1080P|x264|NA|5.1|R|7.6|
+|[寻梦环游记](https://movie.douban.com/subject/20495023/)|2017|4K SDR 8bit|x265|TrueHD|7.1|PG|8.4|
+|[至暗时刻](https://movie.douban.com/subject/26761416/)|2017|1080P|x264|HD|7.1|PG-13|7.4|
+|[阿黛尔的生活](https://movie.douban.com/subject/10535568/)|2013|1080P|x264|NA|5.1|NC-17|7.7|
+|[布达佩斯大饭店](https://movie.douban.com/subject/11525673/)|2014|1080P|x264|HD|5.1|R|8.1|
+|[大电站](https://movie.douban.com/subject/19949238/)|2013|720P|x264|NA|NA|NC-17|6.2|
+|[女仆日记](https://movie.douban.com/subject/21625070/)|2015|1080P|x264|NA|NA|R|5.5|
+|[玫瑰信贷](https://movie.douban.com/subject/4924719/)|2010|HDRip|NA|NA|NA|NC-17|4.9|
+|[去南方](https://movie.douban.com/subject/3708001/)|2009|DVDRip|NA|NA|NA|NC-17|5.9|
+|[鲁贝之灯](https://movie.douban.com/subject/30209086/)|2019|1080P|x264|NA|NA|PG-13|6.2|
+|[小妇人](https://movie.douban.com/subject/26348103/)|2019|1080P 10bit|x265|HD|5.1|PG|7.8|
+|[龙虾](https://movie.douban.com/subject/20514947/)|2015|1080P|x264|HD|5.1|R|7.2|
+|[九品芝麻官](https://movie.douban.com/subject/1297518/)|1994|1080P|x264|NA|5.1|R|7.5|
 |[我妻子的罗曼史](https://movie.douban.com/subject/5413752/)|2011|DVDRip|NA|NA|NA|R|5.7|
 |[燃烧的女子肖像](https://movie.douban.com/subject/30257175/)|2019|1080PHDR|x265|NA|5.1|R|8.1|
 |[极速车王](https://movie.douban.com/subject/6538866/)|2019|1080P|x264|HD|7.1|PG-13|8.1|
@@ -109,13 +109,13 @@
 |[星际迷航5：终极先锋](https://movie.douban.com/subject/1302570/)|1989|1080P|x264|NA|NA|PG|5.5|
 |[星际迷航6：未来之城](https://movie.douban.com/subject/1305970/)|1991|1080P|x264|NA|NA|PG|7.2|
 |[灰猎犬号](https://movie.douban.com/subject/26871906/)|2020|4K|x265|NA|5.1|PG-13|7.1|
-|[信条](https://movie.douban.com/subject/30444960/)|2020|4k120|x265|NA|NA|PG-13|7.5|
+|[信条](https://movie.douban.com/subject/30444960/)|2020|4k 120|x265|NA|NA|PG-13|7.5|
 |[神奇女侠1984](https://movie.douban.com/subject/27073752/)|2020|1080P|x264|NA|5.1|PG-13|5.4|
 |[爱情终点站](https://movie.douban.com/subject/1292274/)|2004|1080P|x264|NA|NA|PG-13|7.4|
-|[疯狂原始人2](https://movie.douban.com/subject/24298954/)|2020|4kHDR|x265|HD|7.1|PG|7.0|
+|[疯狂原始人2](https://movie.douban.com/subject/24298954/)|2020|4k HDR|x265|HD|7.1|PG|7.0|
 |[心灵奇旅](https://movie.douban.com/subject/24733428/)|2020|4k|x265|YE|5.1|PG|8.1|
 |[罗马的房子](https://movie.douban.com/subject/3431336/)|2010|1080P|x264|NA|NA|R|6.1|
-|[罗马](https://movie.douban.com/subject/1950330/)|2018|1080PHDR|x265|NA|5.1|R|7.1|
+|[罗马](https://movie.douban.com/subject/1950330/)|2018|1080P HDR|x265|NA|5.1|R|7.1|
 |[饥饿站台](https://movie.douban.com/subject/34805219/)|2019|1080P|x264|NA|NA|R|7.0|
 |[小姐](https://movie.douban.com/subject/25977027)|2007|1080P|x264|NA|NA|R|8.1|
 |[色，戒](https://movie.douban.com/subject/1828115)|2007|1080P|x264|HD|7.1|NC-17|7.5|
@@ -132,8 +132,13 @@
 |[波斯语课](https://movie.douban.com/subject/30466931/)|2020|1080P|x264|NA|5.1|PG-13|7.4|
 |[午夜巴塞罗那](https://movie.douban.com/subject/1981242/)|2008|1080P|x264|YA|NA|PG-13|7.1|
 |[歌剧魅影](https://movie.douban.com/subject/1291554/)|2004|1080P|x264|YA|NA|PG-13|7.2|
+|亲爱的同志|2020|1080P|x264|NA|NA|R|7.2|
+|[圣母](https://movie.douban.com/subject/26933588/)|2021|1080P|x264|NA|5.1|R|6.7|
+|[罗马假日](https://movie.douban.com/subject/1293839/)|1953|1080P|x264|NA|NA|PG|8.0|
+|[法兰西特派](https://movie.douban.com/subject/30300279/)|2021|4K SDR 10bit|x265|NA|5.1|R|7.3|
+|[不要抬头](https://movie.douban.com/subject/34884712/)|2021|4K|x265|NA|5.1|R|7.3|
 
-共计121部
+共计126部
 
 ## 纪录片
 
@@ -175,11 +180,10 @@
 |权力的游戏：第七季|2017|720P|R|8.6|
 |权力的游戏：第八季|2019|720P|R|7.5|
 |青春猪头少年不会梦到兔女郎学姐|2018|1080P|PG|8.1|
-|我的大叔|2018|720P|PG-13|9.1|
 |切尔诺贝利|2019|1080P|R|9.4|
-|爱，死亡与机器人|2019|1080P|8.5|
+|爱，死亡与机器人：第一季|2019|1080P|8.5|
 
-共计12部
+共计11部
 
 <center>Made by OrsonKrennlc with ❤️</center>
 
