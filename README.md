@@ -137,8 +137,18 @@
 |[罗马假日](https://movie.douban.com/subject/1293839/)|1953|1080P|x264|NA|NA|PG|8.0|
 |[法兰西特派](https://movie.douban.com/subject/30300279/)|2021|4K SDR 10bit|x265|NA|5.1|R|7.3|
 |[不要抬头](https://movie.douban.com/subject/34884712/)|2021|4K|x265|NA|5.1|R|7.3|
+|[倒数时刻](https://movie.douban.com/subject/30279170/)|2021|1080P HDR 10bit|x265|NA|5.1|PG-13|7.6|
+|[钛](https://movie.douban.com/subject/34820925/)|2021|1080P|x264|YA|NA|R|6.7|
+|[哈利波特：魔法石](https://movie.douban.com/subject/1295038/)|2001|4K 120|x265|NA|NA|PG|7.6|
+|[哈利波特：密室](https://movie.douban.com/subject/1296996/)|2002|4K 120|x265|NA|NA|PG|7.4|
+|[哈利波特：阿兹卡班的囚徒](https://movie.douban.com/subject/1291544/)|2004|4K 120|x265|NA|NA|PG|7.9|
+|[哈利波特：火焰杯](https://movie.douban.com/subject/1309055/)|2005|4K 120|x265|NA|NA|PG-13|7.7|
+|[哈利波特：凤凰社](https://movie.douban.com/subject/1457217/)|2007|4K 120|x265|NA|NA|PG-13|7.5|
+|[哈利波特：混血王子](https://movie.douban.com/subject/1433330/)|2009|4K 120|x265|NA|NA|PG|7.6|
+|[哈利波特：死亡圣器（上）](https://movie.douban.com/subject/2051007/)|2010|4K 120|x265|NA|NA|PG-13|7.7|
+|[哈利波特：死亡圣器（下）](https://movie.douban.com/subject/3011235/)|2001|4K 120|x265|NA|NA|PG-13|8.1|
 
-共计126部
+共计136部
 
 ## 纪录片
 
@@ -181,7 +191,7 @@
 |权力的游戏：第八季|2019|720P|R|7.5|
 |青春猪头少年不会梦到兔女郎学姐|2018|1080P|PG|8.1|
 |切尔诺贝利|2019|1080P|R|9.4|
-|爱，死亡与机器人：第一季|2019|1080P|8.5|
+|爱，死亡与机器人：第一季|2019|1080P|R|8.5|
 
 共计11部
 
