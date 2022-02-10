@@ -147,8 +147,10 @@
 |[哈利波特：混血王子](https://movie.douban.com/subject/1433330/)|2009|4K 120|x265|NA|NA|PG|7.6|
 |[哈利波特：死亡圣器（上）](https://movie.douban.com/subject/2051007/)|2010|4K 120|x265|NA|NA|PG-13|7.7|
 |[哈利波特：死亡圣器（下）](https://movie.douban.com/subject/3011235/)|2001|4K 120|x265|NA|NA|PG-13|8.1|
+|[紫罗兰永恒花园外传：永远与自动手记人偶](https://movie.douban.com/subject/33424345/)|2019|1080P|x264|NA|NA|PG|7.5|
+|[紫罗兰永恒花园 剧场版](https://movie.douban.com/subject/30179560/)|2020|1080P|x264|NA|NA|PG|8.5|
 
-共计136部
+共计138部
 
 ## 纪录片
 
