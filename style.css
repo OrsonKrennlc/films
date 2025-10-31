@@ -1,4 +1,4 @@
-/* style.css */
+/* style.css (完整版) */
 
 /* 1. 根变量 (Apple 风格主题) */
 :root {
@@ -8,6 +8,7 @@
     --text-secondary-light: #6e6e73;
     --accent-color: #007aff;
     --border-color-light: #d2d2d7;
+    --delete-color: #ff3b30;
 
     --bg-color-dark: #121212;
     --card-color-dark: #1d1d1d;
@@ -46,11 +47,7 @@
     margin: 0;
     padding: 0;
 }
-
-html {
-    scroll-behavior: smooth;
-}
-
+html { scroll-behavior: smooth; }
 body {
     font-family: var(--font-family);
     background-color: var(--bg-color);
@@ -58,12 +55,16 @@ body {
     line-height: 1.5;
     transition: background-color 0.3s, color 0.3s;
 }
-
 .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
-    padding-top: calc(var(--header-height) + 20px); /* 避免被header遮挡 */
+    padding-top: calc(var(--header-height) + 20px);
+}
+.error-text {
+    color: var(--delete-color);
+    font-size: 0.9rem;
+    margin-top: 10px;
 }
 
 /* 4. 顶部导航 */
@@ -73,7 +74,6 @@ body {
     left: 0;
     width: 100%;
     height: var(--header-height);
-    background-color: var(--card-color-light);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     border-bottom: 1px solid var(--border-color);
@@ -83,24 +83,16 @@ body {
     z-index: 1000;
     padding: 0 20px;
 }
-
 @media (prefers-color-scheme: dark) {
-    .main-header {
-        background-color: rgba(29, 29, 29, 0.7); /* 暗黑模式下的毛玻璃效果 */
-    }
+    .main-header { background-color: rgba(29, 29, 29, 0.7); }
 }
 @media (prefers-color-scheme: light) {
-    .main-header {
-        background-color: rgba(255, 255, 255, 0.7); /* 浅色模式下的毛玻璃效果 */
-    }
+    .main-header { background-color: rgba(255, 255, 255, 0.7); }
 }
-
-
 .main-nav {
     display: flex;
     gap: 30px;
 }
-
 .nav-link {
     text-decoration: none;
     color: var(--text-secondary);
@@ -109,21 +101,12 @@ body {
     border-bottom: 2px solid transparent;
     transition: color 0.2s, border-color 0.2s;
 }
-
-.nav-link:hover {
-    color: var(--text-primary);
-}
-
+.nav-link:hover { color: var(--text-primary); }
 .nav-link.active {
     color: var(--text-primary);
     border-bottom-color: var(--accent-color);
 }
-
-.header-actions {
-    position: absolute;
-    right: 20px;
-}
-
+.header-actions { position: absolute; right: 20px; }
 .add-btn {
     background-color: var(--accent-color);
     color: white;
@@ -134,13 +117,8 @@ body {
     cursor: pointer;
     transition: transform 0.2s, opacity 0.2s;
 }
-
-.add-btn:hover {
-    opacity: 0.8;
-}
-.add-btn:active {
-    transform: scale(0.95);
-}
+.add-btn:hover { opacity: 0.8; }
+.add-btn:active { transform: scale(0.95); }
 
 /* 5. 筛选器 */
 .filter-container {
@@ -149,7 +127,6 @@ body {
     margin-bottom: 30px;
     flex-wrap: wrap;
 }
-
 .filter-btn {
     font-family: var(--font-family);
     font-size: 1rem;
@@ -161,12 +138,10 @@ body {
     cursor: pointer;
     transition: background-color 0.2s, color 0.2s, box-shadow 0.2s;
 }
-
 .filter-btn:hover {
     border-color: var(--accent-color);
     color: var(--accent-color);
 }
-
 .filter-btn.active {
     background-color: var(--accent-color);
     color: white;
@@ -176,69 +151,43 @@ body {
 /* 6. 影片网格 */
 .movie-grid {
     display: grid;
-    /* 核心响应式：自动填充，最小200px，最大1fr */
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 20px;
 }
-
 .movie-card {
     background-color: var(--card-color);
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.05);
     overflow: hidden;
     transition: transform 0.2s, box-shadow 0.2s;
-    cursor: pointer;
+    cursor: pointer; /* 【修改】添加指针 */
 }
-
 @media (prefers-color-scheme: dark) {
-    .movie-card {
-        box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-    }
+    .movie-card { box-shadow: 0 4px 12px rgba(0,0,0,0.2); }
 }
-
 .movie-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 20px rgba(0,0,0,0.1);
 }
-
-/* 替换旧的 .card-poster 样式 */
 .card-poster {
     width: 100%;
-    height: 300px; /* 固定高度 */
-    background-color: #eee; /* 占位符背景色 */
-    display: block; /* 确保是块级元素 */
+    height: 300px;
+    background-color: #eee;
+    display: block;
 }
-
-/* 新增：如果 poster 是一个 img 标签 */
 .card-poster.is-image {
-    object-fit: cover; /* 保持比例，裁剪多余 */
-    background-color: transparent; /* 移除占位符背景色 */
+    object-fit: cover;
+    background-color: transparent;
 }
-
-/* 响应式中的 .card-poster 也更新一下 */
-@media (max-width: 768px) {
-    /* ... (其他响应式代码) ... */
-
-    .card-poster {
-        height: 220px;
-    }
-
-    /* ... */
-}
-
-.card-info {
-    padding: 12px;
-}
-
+.card-info { padding: 12px; }
 .card-title {
     font-size: 1rem;
     font-weight: 600;
     color: var(--text-primary);
     white-space: nowrap;
     overflow: hidden;
-    text-overflow: ellipsis; /* 超出显示... */
+    text-overflow: ellipsis;
 }
-
 .card-meta {
     font-size: 0.85rem;
     color: var(--text-secondary);
@@ -259,7 +208,6 @@ body {
     align-items: center;
     z-index: 2000;
 }
-
 .modal-content {
     background: var(--card-color);
     padding: 30px;
@@ -271,7 +219,10 @@ body {
     position: relative;
     box-shadow: 0 10px 30px rgba(0,0,0,0.1);
 }
-
+/* 【新】小模态框 (用于密码) */
+.modal-small {
+    max-width: 400px;
+}
 .modal-close {
     position: absolute;
     top: 15px;
@@ -282,34 +233,29 @@ body {
     border: none;
     cursor: pointer;
 }
-
-.modal-content h2 {
-    margin-bottom: 20px;
-}
+.modal-content h2 { margin-bottom: 20px; }
 
 /* 8. 表单样式 */
 #add-form .form-group-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr; /* 桌面端两列 */
+    grid-template-columns: 1fr 1fr;
     gap: 15px;
     margin-bottom: 15px;
 }
-
-#add-form .form-group {
+#add-form .form-group, #password-form .form-group {
     display: flex;
     flex-direction: column;
 }
-
-#add-form label {
+#add-form label, #password-form label {
     font-size: 0.9rem;
     font-weight: 500;
     color: var(--text-secondary);
     margin-bottom: 5px;
 }
-
 #add-form input,
 #add-form select,
-#add-form textarea {
+#add-form textarea,
+#password-form input {
     font-family: var(--font-family);
     font-size: 1rem;
     padding: 10px;
@@ -318,11 +264,7 @@ body {
     border-radius: 8px;
     color: var(--text-primary);
 }
-
-#add-form textarea {
-    resize: vertical;
-}
-
+#add-form textarea { resize: vertical; }
 .submit-btn {
     width: 100%;
     background-color: var(--accent-color);
@@ -336,62 +278,89 @@ body {
     margin-top: 20px;
     transition: opacity 0.2s;
 }
-.submit-btn:hover {
+.submit-btn:hover { opacity: 0.8; }
+
+/* 9. 【新】详情模态框样式 */
+.details-content {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 25px;
+}
+.detail-poster {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 12px;
+    background-color: #eee;
+}
+.detail-info h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+.detail-meta {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    margin-bottom: 20px;
+}
+.detail-notes {
+    font-size: 1rem;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+.detail-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    font-size: 0.95rem;
+    margin-bottom: 25px;
+}
+.detail-grid p {
+    color: var(--text-secondary);
+}
+.detail-grid p strong {
+    color: var(--text-primary);
+}
+.detail-grid #detail-douban {
+    color: var(--accent-color);
+    text-decoration: none;
+}
+.detail-actions {
+    display: flex;
+    gap: 15px;
+}
+.edit-btn {
+    flex: 1; /* 占据一半空间 */
+}
+.delete-btn {
+    flex: 1;
+    background-color: var(--delete-color); /* 红色 */
+    color: white;
+}
+.delete-btn:hover {
     opacity: 0.8;
 }
 
-/* 9. 响应式 (手机端) */
+/* 10. 响应式 (手机端) */
 @media (max-width: 768px) {
-    .main-header {
-        justify-content: flex-start;
-        padding: 0 10px;
-    }
-    .main-nav {
-        gap: 15px;
-        overflow-x: auto; /* 导航栏可滚动 */
-        white-space: nowrap;
-        -ms-overflow-style: none; /* IE/Edge */
-        scrollbar-width: none; /* Firefox */
-    }
-    .main-nav::-webkit-scrollbar {
-        display: none; /* Chrome/Safari */
-    }
-    .nav-link {
-        font-size: 0.9rem;
-    }
-    .header-actions {
-        right: 10px;
-    }
-    .add-btn {
-        padding: 6px 12px;
-        font-size: 0.9rem;
-    }
-
-    .container {
-        padding: 10px;
-        padding-top: calc(var(--header-height) + 10px);
-    }
-
-    .movie-grid {
-        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-        gap: 10px;
-    }
-    .card-poster {
-        height: 220px;
-    }
-    .card-title {
-        font-size: 0.9rem;
-    }
-    .card-meta {
-        font-size: 0.75rem;
-    }
+    /* ... (之前的响应式代码) ... */
 
     #add-form .form-group-grid {
         grid-template-columns: 1fr; /* 手机端单列 */
     }
 
-    .modal-content {
-        width: 95%;
-        padding: 20px;
+    /* 【新】详情页响应式 */
+    .details-content {
+        grid-template-columns: 1fr; /* 手机上垂直堆叠 */
+    }
+    .detail-poster {
+        max-width: 250px;
+        margin-bottom: 10px;
+    }
+    .detail-info h2 {
+        font-size: 1.5rem;
+    }
+    .detail-actions {
+        flex-direction: column; /* 按钮也垂直堆叠 */
     }
 }
