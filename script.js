@@ -1,6 +1,15 @@
-// script.js (第3版 - 最终完整版)
+// script.js (第4版 - Firebase 云端版)
 
+// 等待 DOM 加载完成
 document.addEventListener('DOMContentLoaded', () => {
+
+    // === 0. 获取 Firebase 实例 ===
+    // (这些是由 index.html 中的 <script type="module"> 提供的)
+    const { db, collection, getDocs, addDoc } = window.firebase;
+    if (!db) {
+        console.error("Firebase 初始化失败！请检查 index.html 中的配置。");
+        return;
+    }
 
     // === 1. DOM 元素选择 ===
     const navLinks = document.querySelectorAll('.nav-link');
@@ -8,7 +17,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const diskFilterButtons = document.querySelectorAll('.filter-btn');
     const movieGrid = document.getElementById('movie-grid');
 
-    // 模态框 (Modal) 元素
     const addMovieBtn = document.getElementById('add-movie-btn');
     const addModal = document.getElementById('add-modal');
     const closeModalBtn = document.getElementById('modal-close-btn');
@@ -16,36 +24,56 @@ document.addEventListener('DOMContentLoaded', () => {
     const categorySelect = document.getElementById('category');
 
     // === 2. 状态变量 ===
-    let fullDatabase = {};
+    let fullDatabase = {}; // { movies: [], documentaries: [], ... }
     let currentCategory = 'movies';
     let currentDisk = 'all';
 
     // === 3. 核心功能函数 ===
 
     /**
-     * @description 加载 database.json 文件
+     * @description 从 Firebase 加载所有数据
      */
     async function loadDatabase() {
+        console.log("正在从 Firebase 加载数据...");
+        movieGrid.innerHTML = `<p style="grid-column: 1 / -1; text-align: center;">正在加载...</p>`;
+
         try {
-            // 添加一个时间戳 "cache buster" 来防止浏览器缓存
-            const response = await fetch(`database.json?t=${new Date().getTime()}`);
-            if (!response.ok) {
-                throw new Error(`HTTP error! status: ${response.status}`);
-            }
-            fullDatabase = await response.json();
+            const categories = ['movies', 'documentaries', 'tv_shows', 'concerts'];
+
+            // 并行获取所有类别的数据
+            const promises = categories.map(category => getDocs(collection(db, category)));
+            const results = await Promise.all(promises);
+
+            // 清空本地数据库
+            fullDatabase = {};
+
+            results.forEach((snapshot, index) => {
+                const categoryName = categories[index];
+
+                // 将 Firebase 文档转换为我们熟悉的数组结构
+                fullDatabase[categoryName] = snapshot.docs.map(doc => {
+                    return {
+                        id: doc.id,     // 这是 Firestore 自动生成的 ID
+                        ...doc.data() // 这是文档中的所有数据
+                    };
+                });
+            });
+
             console.log("✅ 数据库加载成功:", fullDatabase);
 
+            // 首次加载，渲染默认内容 (电影)
             renderContent();
             updateDiskFilterVisibility();
 
         } catch (error) {
-            console.error("❌ 加载 database.json 失败:", error);
-            movieGrid.innerHTML = `<p style="color: red; grid-column: 1 / -1;">加载数据失败。请确保 database.json 文件在同一目录下，并且你正在使用 http-server 运行。</p>`;
+            console.error("❌ 加载 Firestore 数据失败:", error);
+            movieGrid.innerHTML = `<p style="color: red; grid-column: 1 / -1;">加载数据失败。请检查 Firebase 配置和安全规则。</p>`;
         }
     }
 
     /**
-     * @description 根据当前状态 (currentCategory, currentDisk) 渲染内容
+     * @description 渲染内容 (此函数无需更改！)
+     * (唯一的区别是 item.id 现在是 Firebase ID)
      */
     function renderContent() {
         movieGrid.innerHTML = '';
@@ -55,7 +83,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const itemsToRender = items
             .filter(item => (currentDisk === 'all' || item.disk === currentDisk))
-            .sort((a, b) => (b.year || 0) - (a.year || 0)); // 按年份降序排序
+            .sort((a, b) => (b.year || 0) - (a.year || 0));
 
         if (itemsToRender.length === 0) {
             movieGrid.innerHTML = `<p style="color: var(--text-secondary); grid-column: 1 / -1; text-align: center; margin-top: 40px;">这个分类下没有影片。</p>`;
@@ -63,15 +91,10 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         itemsToRender.forEach(item => {
-
-            // *** 海报逻辑更新 ***
             let posterElement = '';
-            // 检查是否有 posterLink 并且它不是一个空字符串
             if (item.posterLink && item.posterLink.trim() !== '') {
-                // 如果有链接, 使用 <img> 标签
                 posterElement = `<img src="${item.posterLink}" alt="${item.title}" class="card-poster is-image">`;
             } else {
-                // 否则, 使用 <div> 占位符
                 posterElement = `<div class="card-poster"></div>`;
             }
 
@@ -95,7 +118,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     /**
-     * @description 更新分盘筛选器的可见性
+     * @description 更新分盘筛选器的可见性 (无需更改)
      */
     function updateDiskFilterVisibility() {
         if (currentCategory === 'movies') {
@@ -106,58 +129,62 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     /**
-     * @description 处理表单提交
+     * @description 处理表单提交 (已更新为写入 Firebase)
      */
-    function handleFormSubmit(e) {
-        e.preventDefault(); // 阻止表单默认提交
+    async function handleFormSubmit(e) {
+        e.preventDefault();
 
         // 1. 从表单收集数据
-        const formData = new FormData(addForm);
         const newItem = {
-            // 我们用时间戳生成一个简单的唯一 ID
-            id: 'new-' + Date.now(),
-
-            // 从表单的 input id 中获取值
-            category: document.getElementById('category').value,
+            // (我们不再需要 'id' 或 'category',
+            // 'id' 由 Firebase 生成, 'category' 由集合名称决定)
             disk: document.getElementById('disk').value,
             title: document.getElementById('title').value,
             year: parseInt(document.getElementById('year').value) || null,
             doubanLink: document.getElementById('doubanLink').value,
             resolution: document.getElementById('resolution').value || 'NA',
             format: document.getElementById('format').value || 'NA',
-            audio_dts: 'NA', // (我们简化了表单, 暂不添加)
-            audio_dd: 'NA',  // (我们简化了表单, 暂不添加)
+            audio_dts: 'NA',
+            audio_dd: 'NA',
             rating: document.getElementById('rating').value || 'NA',
             imdb: parseFloat(document.getElementById('imdb').value) || null,
             notes: document.getElementById('notes').value,
-
-            // *** 新增海报链接 ***
             posterLink: document.getElementById('posterLink').value
         };
 
-        // 2. 将新项目添加到内存中的数据库
-        // (注意: 'movie' -> 'movies')
-        const categoryArrayName = `${newItem.category}s`;
-        if (fullDatabase[categoryArrayName]) {
-            fullDatabase[categoryArrayName].push(newItem);
-        } else {
-            // 如果这个类别不存在 (虽然不太可能), 创建它
-            fullDatabase[categoryArrayName] = [newItem];
+        // 2. 决定要写入哪个 "Collection"
+        // (e.g., 'movie' -> 'movies')
+        const categoryValue = document.getElementById('category').value;
+        const collectionName = `${categoryValue}s`;
+
+        try {
+            // 3. 将新文档添加到 Firebase
+            const docRef = await addDoc(collection(db, collectionName), newItem);
+
+            console.log("✅ 新影片已添加, ID: ", docRef.id);
+
+            // 4. (优化) 将新项目添加到本地内存, 避免重新加载
+            const itemWithId = { id: docRef.id, ...newItem };
+            if (!fullDatabase[collectionName]) {
+                fullDatabase[collectionName] = [];
+            }
+            fullDatabase[collectionName].push(itemWithId);
+
+            // 5. 检查当前视图是否需要刷新
+            if (collectionName === currentCategory) {
+                renderContent(); // 重新渲染当前视图
+            }
+
+            // 6. 关闭模态框
+            addModal.style.display = 'none';
+
+        } catch (error) {
+            console.error("❌ 添加文档失败: ", error);
+            alert("保存失败，请检查网络连接或控制台报错。");
         }
-
-        // 3. 检查当前视图是否需要刷新
-        // (如果用户在 'movies' 视图下添加了 'tv_show', 不需要刷新)
-        if (categoryArrayName === currentCategory) {
-            renderContent();
-        }
-
-        // 4. 关闭模态框
-        addModal.style.display = 'none';
-
-        console.log("✅ 新影片已添加:", newItem);
     }
 
-    // === 4. 事件监听器 ===
+    // === 4. 事件监听器 (无需更改) ===
 
     // 导航栏切换
     navLinks.forEach(link => {
@@ -204,11 +231,10 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // *** 激活表单提交事件 ***
+    // 激活表单提交事件
     addForm.addEventListener('submit', handleFormSubmit);
 
-
     // === 5. 启动 ===
-    loadDatabase();
+    loadDatabase(); // 启动时从 Firebase 加载数据
 
 });

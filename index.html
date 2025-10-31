@@ -100,6 +100,34 @@
         </div>
     </div>
 
-    <script src="script.js"></script>
+    <script type="module">
+        // 导入 Firebase 核心和 Firestore
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js";
+        import {
+          getFirestore, collection, getDocs, addDoc
+        } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-firestore.js";
+
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        const firebaseConfig = {
+        apiKey: "AIzaSyDm7J8PpBr2uMhVUvDdExeTiut1Ogrr0F4",
+        authDomain: "my-film-library-8f972.firebaseapp.com",
+        projectId: "my-film-library-8f972",
+        storageBucket: "my-film-library-8f972.firebasestorage.app",
+        messagingSenderId: "1003143493467",
+        appId: "1:1003143493467:web:c9ad60383d6b917103cc7e",
+        measurementId: "G-Z5CT4XPWLF"
+        };
+
+        // 初始化 Firebase
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+
+        // 将 'db' 和 'firestore' 函数传递给你的主脚本
+        // (我们使用 window 对象来传递，以便 script.js 可以访问它们)
+        window.firebase = { db, collection, getDocs, addDoc };
+
+      </script>
+
+      <script src="script.js"></script>
 </body>
 </html>
