@@ -1,0 +1,25 @@
+{
+  "name": "films",
+  "version": "1.0.0",
+  "description": "> 建议使用PotPlayer或VLC播放，大部分有外挂字幕\r > * G级：（GENERAL AUDIENCES All ages admitted.）大众级，所有年龄均可观看大众级，适合所有年龄段的人观看——该级别的电影内容可以被父母接受，影片没有裸体、性爱场面，吸毒和暴力场面非常少。对话也是日常生活中可以经常接触到的。\r > * PG级：（ PARENTAL GUIDANCE SUGGESTED Some material may not be suitable for children.）普通级， 建议在父母的陪伴下观看，有些镜头可能让儿童产生不适感.辅导级，一些内容可能不适合儿童观看——该级别的电影基本没有性爱、吸毒和裸体场面，即使有时间也很短，此外，恐怖和暴力场面不会超出适度的范围。\r > * PG-13级：（PARENTS STRONGLY CAUTIONED Some material may be inappropriate for children under 13. ）普通级，但不适于13岁以下儿童.特别辅导级，13岁以下儿童尤其要有父母陪同观看，一些内容对儿童很不适宜——该级别的电影没有粗野的持续暴力镜头，一般没有裸体镜头，有时会有吸毒镜头和脏话。\r > * R级：（RESTRICTED Under 17 requires accompanying parent or adult guardian.） 限制级，17岁以下必须由父母或者监护陪伴才能观看．限制级，17岁以下观众要求有父母或成人陪同观看——该级别的影片包含成人内容，里面有较多的性爱、暴力、吸毒等场面和脏话。\r > * NC-17级： （NO ONE 17 AND UNDER ADMITTED ）17岁或者以下不可观看 17岁以下观众禁止观看——该级别的影片被定为成人影片，未成年人坚决被禁止观看。影片中有清楚的性爱场面，大量的吸毒或暴力镜头以及脏话等。",
+  "main": "parser.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OrsonKrennlc/films.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/OrsonKrennlc/films/issues"
+  },
+  "homepage": "https://github.com/OrsonKrennlc/films#readme",
+  "dependencies": {
+    "marked": "^16.4.1",
+    "uuid": "^13.0.0"
+  }
+}
