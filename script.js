@@ -152,14 +152,24 @@ document.addEventListener('DOMContentLoaded', () => {
             posterLink: document.getElementById('posterLink').value
         };
 
+        // ... 在 handleFormSubmit 函数内部 ...
+
         // 2. 决定要写入哪个 "Collection"
-        // (e.g., 'movie' -> 'movies')
-        const categoryValue = document.getElementById('category').value;
-        const collectionName = `${categoryValue}s`;
+        const categoryValue = document.getElementById('category').value; // e.g., 'documentary'
+
+        // --- 修正开始 ---
+        let collectionName = '';
+        if (categoryValue === 'documentary') {
+            collectionName = 'documentaries'; // 正确处理 'documentary' 的复数
+        } else {
+            collectionName = `${categoryValue}s`; // 'movie' -> 'movies', 'tv_show' -> 'tv_shows'
+        }
+        // --- 修正结束 ---
 
         try {
             // 3. 将新文档添加到 Firebase
             const docRef = await addDoc(collection(db, collectionName), newItem);
+            // ...
 
             console.log("✅ 新影片已添加, ID: ", docRef.id);
 
