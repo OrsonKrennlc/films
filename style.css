@@ -89,7 +89,27 @@ body {
 }
 .nav-link:hover { color: var(--text-primary); }
 .nav-link.active { color: var(--text-primary); border-bottom-color: var(--accent-color); }
-.header-actions { position: absolute; right: 20px; }
+/* 【新】左侧按钮容器 */
+.header-actions-left {
+    position: absolute;
+    left: 20px;
+}
+@media (max-width: 768px) {
+    .header-actions-left {
+        left: 10px;
+    }
+}
+
+/* 【已修改】右侧按钮容器 */
+.header-actions-right {
+    position: absolute;
+    right: 20px;
+}
+@media (max-width: 768px) {
+    .header-actions-right {
+        right: 10px;
+    }
+}
 .add-btn {
     background-color: var(--accent-color);
     color: white;
