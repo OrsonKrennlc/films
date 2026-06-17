@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jerry Shen - Films / 片库</title>
+    
+    <!-- SEO Metadata -->
+    <meta name="description" content="Jerry Shen's personal film library. A curated archive of 274 cinematic works, including movies, documentaries, concerts, and TV series with search, filters, statistics, and interactive blind box.">
+    <meta name="keywords" content="Jerry Shen, Portfolio, Film Library, 片库, 电影推荐, 交互设计">
+    <meta name="author" content="Jerry Shen">
+
+    <!-- Open Graph Metadata -->
+    <meta property="og:title" content="Jerry Shen - Films / 片库">
+    <meta property="og:description" content="Jerry Shen's personal film library archive with 274 works. Filter, search, and randomly pick films in a premium cinematic showcase.">
+    <meta property="og:type" content="website">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anonymous+Pro:wght@400;700&family=Caveat:wght@700&family=Noto+Serif+SC:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Custom Style -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Fixed Header -->
+    <header class="site-header" id="site-header">
+        <a href="https://orsonkrennlc.github.io/index.html#home" class="logo">Jerry Shen</a>
+        <nav class="main-nav" aria-label="主要导航">
+            <a href="https://orsonkrennlc.github.io/index.html#home">主页/Portfolio</a>
+            <a href="https://orsonkrennlc.github.io/architect.html">建筑/Architect</a>
+            <a href="https://orsonkrennlc.github.io/index.html#projects">摄影/Photographer</a>
+            <a href="https://orsonkrennlc.github.io/index.html#projects">行者/Traveller</a>
+            <a href="https://orsonkrennlc.github.io/index.html#about" class="active">关于/About</a>
+        </nav>
+    </header>
+
+    <!-- Main Wrapper -->
+    <main class="main-wrapper" id="main-wrapper">
+        
+        <!-- Hero Section (Cinematic theme) -->
+        <section class="hero-section" id="hero-films" aria-labelledby="hero-title">
+            <div class="hero-content">
+                <div class="glitch-wrapper">
+                    <h1 class="glitch-title" id="hero-title">Cinémathèque.</h1>
+                    <p class="glitch-subtitle">A curated collection of 274 cinematic works, documentaries, concerts, and series.</p>
+                </div>
+            </div>
+
+            <!-- Stats Bar -->
+            <div class="stats-dashboard" aria-label="片库统计面板">
+                <div class="stat-item">
+                    <div class="stat-value accent" id="stat-total-films">274</div>
+                    <div class="stat-label">总收录影片 / Total Works</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value" id="stat-movies">228</div>
+                    <div class="stat-label">电影 / Movies</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value" id="stat-series">31</div>
+                    <div class="stat-label">电视剧 / TV Series</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value accent" id="stat-avg-imdb">7.6</div>
+                    <div class="stat-label">平均 IMDb 评分 / Avg Score</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Main Content Area -->
+        <section class="main-content" aria-label="影片检索与展示区">
+            
+            <!-- Filter Toolbar -->
+            <div class="controls-panel">
+                <!-- Search and View Toggle -->
+                <div class="search-row">
+                    <div class="search-box-wrapper">
+                        <!-- Search SVG Icon -->
+                        <svg class="search-icon" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                        </svg>
+                        <input type="text" id="search-bar" class="search-input" placeholder="搜索片名、上映年份、分级或推荐理由..." aria-label="输入关键字搜索影片">
+                    </div>
+                    
+                    <div class="view-toggle-group">
+                        <button id="btn-view-grid" class="view-btn active" title="网格卡片视图">
+                            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+                                <rect x="3" y="3" width="7" height="7"></rect>
+                                <rect x="14" y="3" width="7" height="7"></rect>
+                                <rect x="14" y="14" width="7" height="7"></rect>
+                                <rect x="3" y="14" width="7" height="7"></rect>
+                            </svg>
+                            网格
+                        </button>
+                        <button id="btn-view-list" class="view-btn" title="列表清单视图">
+                            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+                                <line x1="8" y1="6" x2="21" y2="6"></line>
+                                <line x1="8" y1="12" x2="21" y2="12"></line>
+                                <line x1="8" y1="18" x2="21" y2="18"></line>
+                                <line x1="3" y1="6" x2="3.01" y2="6"></line>
+                                <line x1="3" y1="12" x2="3.01" y2="12"></line>
+                                <line x1="3" y1="18" x2="3.01" y2="18"></line>
+                            </svg>
+                            列表
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Category Pills -->
+                <div class="filter-row">
+                    <div class="filter-label">类别 / Category</div>
+                    <div class="pills-group" id="filter-category-group">
+                        <span class="pill active" data-category="all">全部类别</span>
+                        <span class="pill" data-category="电影">电影 / Movies</span>
+                        <span class="pill" data-category="电视剧">电视剧 / Series</span>
+                        <span class="pill" data-category="纪录片">纪录片 / Docs</span>
+                        <span class="pill" data-category="演唱会">演唱会 / Concerts</span>
+                    </div>
+                </div>
+
+                <!-- Disk Subfilters (Only shows for Movie category) -->
+                <div class="filter-row" id="disk-subfilters" style="display: none;">
+                    <div class="filter-label">硬盘分盘 / Disk Division</div>
+                    <div class="pills-group">
+                        <span class="pill active" data-disk="all">全部硬盘</span>
+                        <span class="pill" data-disk="disk1">disk1 (138部)</span>
+                        <span class="pill" data-disk="disk2">disk2 (42部)</span>
+                        <span class="pill" data-disk="disk3">disk3 (48部)</span>
+                    </div>
+                </div>
+
+                <!-- Rating Pills -->
+                <div class="filter-row">
+                    <div class="filter-label">家长分级 / MPAA Rating</div>
+                    <div class="pills-group" id="filter-rating-group">
+                        <!-- Populated dynamically by app.js -->
+                    </div>
+                </div>
+
+                <!-- Sort and Filter Stats -->
+                <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px; border-top: 1px solid var(--border-color); padding-top: 20px;">
+                    <div style="font-family: var(--font-zh); font-size: 14px; color: var(--text-gray-dark);">
+                        共筛选出 <strong id="filtered-count" style="color: var(--text-primary); font-family: var(--font-en); font-size: 16px;">274</strong> 部影片
+                    </div>
+                    
+                    <div style="display: flex; align-items: center; gap: 10px;">
+                        <label for="sort-select" style="font-family: var(--font-zh); font-size: 14px; color: #333;">排序 / Sort</label>
+                        <select id="sort-select" style="height: 38px; border: 1px solid var(--border-color); border-radius: 6px; padding: 0 10px; font-family: var(--font-zh); font-size: 14px; outline: none; background: #FFF;">
+                            <option value="year-desc" selected>上映年份：从新到旧</option>
+                            <option value="year-asc">上映年份：从旧到新</option>
+                            <option value="imdb-desc">IMDb 评分：从高到低</option>
+                            <option value="imdb-asc">IMDb 评分：从低到高</option>
+                            <option value="title">首字母拼音 / A-Z</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Expandable Analytics Dashboard -->
+                <div class="analytics-toggle">
+                    <button id="toggle-analytics" class="analytics-toggle-btn">
+                        展开数据图表
+                        <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24" style="transition: transform 0.3s;" aria-hidden="true">
+                            <path d="M7 10l5 5 5-5H7z"/>
+                        </svg>
+                    </button>
+                </div>
+
+                <!-- SVG statistics visualization charts -->
+                <div class="analytics-panel" id="analytics-panel">
+                    <div class="chart-card">
+                        <div class="chart-title">分级分布 / Rating Distribution</div>
+                        <div class="bar-chart-container" id="rating-dist-chart">
+                            <!-- JS Generates Bar Rows -->
+                        </div>
+                    </div>
+                    <div class="chart-card">
+                        <div class="chart-title">年代分布 / Decade Distribution</div>
+                        <div class="bar-chart-container" id="decade-dist-chart">
+                            <!-- JS Generates Bar Rows -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Film Grid / List Container -->
+            <div id="films-container" class="films-grid">
+                <!-- Dynamically loaded via js/app.js -->
+            </div>
+
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer" id="site-footer">
+        <p>Made by OrsonKrennlc with ❤️</p>
+        <p>Powered by <a href="https://github.com/OrsonKrennlc/films" target="_blank">GitHub</a></p>
+    </footer>
+
+    <!-- Film Detail Modal -->
+    <div class="modal-overlay" id="detail-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title-zh">
+        <div class="modal-container">
+            <button class="modal-close" id="modal-close" aria-label="关闭对话框">✕</button>
+            
+            <div class="modal-left">
+                <!-- Large abstract poster overlay -->
+                <img id="modal-poster" src="" style="width:100%; height:100%; object-fit:cover;" alt="Generative Cover Poster">
+            </div>
+            
+            <div class="modal-right">
+                <div>
+                    <h2 class="modal-title-zh" id="modal-title-zh">侠盗一号</h2>
+                    <p class="modal-title-en" id="modal-title-en" style="font-family: var(--font-en); font-size: 1.1rem; color: var(--text-gray-dark); margin-bottom: 20px;"></p>
+                    
+                    <div class="modal-meta-row">
+                        <span id="modal-rating" class="film-rating-badge badge-pg13">PG-13</span>
+                        <div style="display:flex; align-items:center; gap:5px;">
+                            <span class="imdb-logo">IMDb</span>
+                            <span class="imdb-val" id="modal-imdb">7.8</span>
+                        </div>
+                    </div>
+                    
+                    <div class="modal-info-grid">
+                        <div>
+                            <div class="info-label">上映年份 / Release Year</div>
+                            <div class="info-value mono" id="modal-year">2016</div>
+                        </div>
+                        <div>
+                            <div class="info-label">所属分类 / Category</div>
+                            <div class="info-value" id="modal-category">电影</div>
+                        </div>
+                        <div>
+                            <div class="info-label">硬盘分区 / Storage Location</div>
+                            <div class="info-value mono" id="modal-disk">disk1</div>
+                        </div>
+                    </div>
+
+                    <!-- Full rating description -->
+                    <div class="rating-desc-block" id="rating-desc-block">
+                        <!-- Dynamically filled -->
+                    </div>
+
+                    <!-- Notes ("Why it's here") -->
+                    <div class="curator-note-block" id="curator-note-block" style="display: none;">
+                        <!-- Dynamically filled -->
+                    </div>
+                </div>
+
+                <div class="modal-actions">
+                    <a href="" id="modal-douban-btn" target="_blank" class="btn-primary">
+                        <!-- Douban logo lookalike icon -->
+                        <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24" style="margin-right:5px;" aria-hidden="true">
+                            <path d="M2.585 3.398h18.83V5.55H2.585zM6.354 8.784h11.292v6.46H6.354zm12.37-2.152v10.764H5.275V6.632H2.585v13.97h7.536v2.693H7.536v1.077h8.928v-1.077h-2.693v-2.693h7.536V6.632z"/>
+                        </svg>
+                        豆瓣电影 / Douban Link
+                    </a>
+                    <a href="" id="modal-imdb-btn" target="_blank" class="btn-secondary">在 IMDb 检索</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Lucky Pick Floating Action Button -->
+    <button class="fab-lucky" id="fab-lucky" aria-label="开启电影盲盒">
+        🎲
+        <span class="fab-tooltip">电影盲盒 / Lucky Pick</span>
+    </button>
+
+    <!-- Lucky Pick Slot Machine Modal -->
+    <div class="modal-overlay" id="lucky-modal" role="dialog" aria-modal="true" aria-labelledby="lucky-title">
+        <div class="lucky-container">
+            <button class="modal-close" id="lucky-modal-close" aria-label="关闭对话框" style="color: #FFF; background: rgba(255,255,255,0.1);">✕</button>
+            
+            <h2 class="lucky-title" id="lucky-title">🍿 电影盲盒 🎬</h2>
+            
+            <p style="font-size:14px; color:#aaa; margin-bottom:25px;">
+                觉得看什么太难决定？让盲盒为您在当前筛选结果中挑选一部影片。
+            </p>
+            
+            <div class="lucky-slot-machine">
+                <div class="lucky-slot-wrapper" id="lucky-slot-wrapper">
+                    <div class="slot-item">🎬 电影盲盒 🍿</div>
+                </div>
+            </div>
+            
+            <button class="lucky-action-btn" id="lucky-start-btn">开启电影盲盒</button>
+        </div>
+    </div>
+
+    <!-- Application scripts -->
+    <script src="js/data.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
