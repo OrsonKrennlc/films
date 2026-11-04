@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jerry Shen - Films / 片库</title>
+    <title>Jerry Shen - 个人片库</title>
     
     <!-- SEO Metadata -->
     <meta name="description" content="Jerry Shen's personal film library. A curated archive of 274 cinematic works, including movies, documentaries, concerts, and TV series with search, filters, statistics, and interactive blind box.">
@@ -21,60 +21,23 @@
     <link href="https://fonts.googleapis.com/css2?family=Anonymous+Pro:wght@400;700&family=Caveat:wght@700&family=Noto+Serif+SC:wght@300;400;600;700&display=swap" rel="stylesheet">
     
     <!-- Custom Style -->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css?v=8">
 </head>
 <body>
-
-    <!-- Fixed Header -->
-    <header class="site-header" id="site-header">
-        <a href="https://orsonkrennlc.github.io/index.html#home" class="logo">Jerry Shen</a>
-        <nav class="main-nav" aria-label="主要导航">
-            <a href="https://orsonkrennlc.github.io/index.html#home">主页/Portfolio</a>
-            <a href="https://orsonkrennlc.github.io/architect.html">建筑/Architect</a>
-            <a href="https://orsonkrennlc.github.io/index.html#projects">摄影/Photographer</a>
-            <a href="https://orsonkrennlc.github.io/index.html#projects">行者/Traveller</a>
-            <a href="https://orsonkrennlc.github.io/index.html#about" class="active">关于/About</a>
-        </nav>
-    </header>
 
     <!-- Main Wrapper -->
     <main class="main-wrapper" id="main-wrapper">
         
-        <!-- Hero Section (Cinematic theme) -->
-        <section class="hero-section" id="hero-films" aria-labelledby="hero-title">
-            <div class="hero-content">
-                <div class="glitch-wrapper">
-                    <h1 class="glitch-title" id="hero-title">Cinémathèque.</h1>
-                    <p class="glitch-subtitle">A curated collection of 274 cinematic works, documentaries, concerts, and series.</p>
-                </div>
-            </div>
-
-            <!-- Stats Bar -->
-            <div class="stats-dashboard" aria-label="片库统计面板">
-                <div class="stat-item">
-                    <div class="stat-value accent" id="stat-total-films">274</div>
-                    <div class="stat-label">总收录影片 / Total Works</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-value" id="stat-movies">228</div>
-                    <div class="stat-label">电影 / Movies</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-value" id="stat-series">31</div>
-                    <div class="stat-label">电视剧 / TV Series</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-value accent" id="stat-avg-imdb">7.6</div>
-                    <div class="stat-label">平均 IMDb 评分 / Avg Score</div>
-                </div>
-            </div>
-        </section>
-
         <!-- Main Content Area -->
         <section class="main-content" aria-label="影片检索与展示区">
             
             <!-- Filter Toolbar -->
             <div class="controls-panel">
+                <!-- Simple Plain Stats Line -->
+                <div class="simple-stats-bar" id="simple-stats-bar">
+                    <!-- Populated dynamically by app.js -->
+                </div>
+
                 <!-- Search and View Toggle -->
                 <div class="search-row">
                     <div class="search-box-wrapper">
@@ -86,101 +49,92 @@
                         <input type="text" id="search-bar" class="search-input" placeholder="搜索片名、上映年份、分级或推荐理由..." aria-label="输入关键字搜索影片">
                     </div>
                     
-                    <div class="view-toggle-group">
-                        <button id="btn-view-grid" class="view-btn active" title="网格卡片视图">
-                            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
-                                <rect x="3" y="3" width="7" height="7"></rect>
-                                <rect x="14" y="3" width="7" height="7"></rect>
-                                <rect x="14" y="14" width="7" height="7"></rect>
-                                <rect x="3" y="14" width="7" height="7"></rect>
+                    <div class="search-actions">
+                        <button id="btn-toggle-filters" class="filter-toggle-btn" aria-expanded="false" title="展开/收起筛选条件">
+                            <svg class="filter-icon" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+                                <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon>
                             </svg>
-                            网格
-                        </button>
-                        <button id="btn-view-list" class="view-btn" title="列表清单视图">
-                            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
-                                <line x1="8" y1="6" x2="21" y2="6"></line>
-                                <line x1="8" y1="12" x2="21" y2="12"></line>
-                                <line x1="8" y1="18" x2="21" y2="18"></line>
-                                <line x1="3" y1="6" x2="3.01" y2="6"></line>
-                                <line x1="3" y1="12" x2="3.01" y2="12"></line>
-                                <line x1="3" y1="18" x2="3.01" y2="18"></line>
+                            <span id="filter-toggle-text">筛选</span>
+                            <svg class="chevron-icon" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+                                <polyline points="6 9 12 15 18 9"></polyline>
                             </svg>
-                            列表
                         </button>
-                    </div>
-                </div>
 
-                <!-- Category Pills -->
-                <div class="filter-row">
-                    <div class="filter-label">类别 / Category</div>
-                    <div class="pills-group" id="filter-category-group">
-                        <span class="pill active" data-category="all">全部类别</span>
-                        <span class="pill" data-category="电影">电影 / Movies</span>
-                        <span class="pill" data-category="电视剧">电视剧 / Series</span>
-                        <span class="pill" data-category="纪录片">纪录片 / Docs</span>
-                        <span class="pill" data-category="演唱会">演唱会 / Concerts</span>
-                    </div>
-                </div>
-
-                <!-- Disk Subfilters (Only shows for Movie category) -->
-                <div class="filter-row" id="disk-subfilters" style="display: none;">
-                    <div class="filter-label">硬盘分盘 / Disk Division</div>
-                    <div class="pills-group">
-                        <span class="pill active" data-disk="all">全部硬盘</span>
-                        <span class="pill" data-disk="disk1">disk1 (138部)</span>
-                        <span class="pill" data-disk="disk2">disk2 (42部)</span>
-                        <span class="pill" data-disk="disk3">disk3 (48部)</span>
-                    </div>
-                </div>
-
-                <!-- Rating Pills -->
-                <div class="filter-row">
-                    <div class="filter-label">家长分级 / MPAA Rating</div>
-                    <div class="pills-group" id="filter-rating-group">
-                        <!-- Populated dynamically by app.js -->
-                    </div>
-                </div>
-
-                <!-- Sort and Filter Stats -->
-                <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px; border-top: 1px solid var(--border-color); padding-top: 20px;">
-                    <div style="font-family: var(--font-zh); font-size: 14px; color: var(--text-gray-dark);">
-                        共筛选出 <strong id="filtered-count" style="color: var(--text-primary); font-family: var(--font-en); font-size: 16px;">274</strong> 部影片
-                    </div>
-                    
-                    <div style="display: flex; align-items: center; gap: 10px;">
-                        <label for="sort-select" style="font-family: var(--font-zh); font-size: 14px; color: #333;">排序 / Sort</label>
-                        <select id="sort-select" style="height: 38px; border: 1px solid var(--border-color); border-radius: 6px; padding: 0 10px; font-family: var(--font-zh); font-size: 14px; outline: none; background: #FFF;">
-                            <option value="year-desc" selected>上映年份：从新到旧</option>
-                            <option value="year-asc">上映年份：从旧到新</option>
-                            <option value="imdb-desc">IMDb 评分：从高到低</option>
-                            <option value="imdb-asc">IMDb 评分：从低到高</option>
-                            <option value="title">首字母拼音 / A-Z</option>
-                        </select>
-                    </div>
-                </div>
-
-                <!-- Expandable Analytics Dashboard -->
-                <div class="analytics-toggle">
-                    <button id="toggle-analytics" class="analytics-toggle-btn">
-                        展开数据图表
-                        <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24" style="transition: transform 0.3s;" aria-hidden="true">
-                            <path d="M7 10l5 5 5-5H7z"/>
-                        </svg>
-                    </button>
-                </div>
-
-                <!-- SVG statistics visualization charts -->
-                <div class="analytics-panel" id="analytics-panel">
-                    <div class="chart-card">
-                        <div class="chart-title">分级分布 / Rating Distribution</div>
-                        <div class="bar-chart-container" id="rating-dist-chart">
-                            <!-- JS Generates Bar Rows -->
+                        <div class="view-toggle-group">
+                            <button id="btn-view-grid" class="view-btn active" title="网格卡片视图">
+                                <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+                                    <rect x="3" y="3" width="7" height="7"></rect>
+                                    <rect x="14" y="3" width="7" height="7"></rect>
+                                    <rect x="14" y="14" width="7" height="7"></rect>
+                                    <rect x="3" y="14" width="7" height="7"></rect>
+                                </svg>
+                                网格
+                            </button>
+                            <button id="btn-view-list" class="view-btn" title="列表清单视图">
+                                <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+                                    <line x1="8" y1="6" x2="21" y2="6"></line>
+                                    <line x1="8" y1="12" x2="21" y2="12"></line>
+                                    <line x1="8" y1="18" x2="21" y2="18"></line>
+                                    <line x1="3" y1="6" x2="3.01" y2="6"></line>
+                                    <line x1="3" y1="12" x2="3.01" y2="12"></line>
+                                    <line x1="3" y1="18" x2="3.01" y2="18"></line>
+                                </svg>
+                                列表
+                            </button>
                         </div>
                     </div>
-                    <div class="chart-card">
-                        <div class="chart-title">年代分布 / Decade Distribution</div>
-                        <div class="bar-chart-container" id="decade-dist-chart">
-                            <!-- JS Generates Bar Rows -->
+                </div>
+
+                <!-- Collapsible Filters Container -->
+                <div class="collapsible-filters collapsed" id="collapsible-filters">
+                    <!-- Category Pills -->
+                    <div class="filter-row">
+                        <div class="filter-label">类别</div>
+                        <div class="pills-group" id="filter-category-group">
+                            <span class="pill active" data-category="all">全部类别</span>
+                            <span class="pill" data-category="电影">电影</span>
+                            <span class="pill" data-category="电视剧">电视剧</span>
+                            <span class="pill" data-category="纪录片">纪录片</span>
+                            <span class="pill" data-category="演唱会">演唱会</span>
+                        </div>
+                    </div>
+
+                    <!-- Location Filter -->
+                    <div class="filter-row" id="location-filters">
+                        <div class="filter-label">位置</div>
+                        <div class="pills-group" id="filter-location-group">
+                            <span class="pill active" data-disk="all">全部位置</span>
+                            <span class="pill" data-disk="disk1">disk1 (138部)</span>
+                            <span class="pill" data-disk="disk2">disk2 (42部)</span>
+                            <span class="pill" data-disk="disk3">disk3 (48部)</span>
+                        </div>
+                    </div>
+
+                    <!-- Rating Pills -->
+                    <div class="filter-row">
+                        <div class="filter-label">家长分级</div>
+                        <div class="pills-group" id="filter-rating-group">
+                            <!-- Populated dynamically by app.js -->
+                        </div>
+                    </div>
+
+                    <!-- Sort and Filter Stats -->
+                    <div class="sort-filter-footer">
+                        <div class="filter-count-info">
+                            共筛选出 <strong id="filtered-count">274</strong> 部作品
+                        </div>
+                        
+                        <div class="sort-select-wrapper">
+                            <label for="sort-select">排序</label>
+                            <select id="sort-select">
+                                <option value="year-desc" selected>上映年份：从新到旧</option>
+                                <option value="year-asc">上映年份：从旧到新</option>
+                                <option value="douban-desc">豆瓣评分：从高到低</option>
+                                <option value="rt-desc">烂番茄新鲜度：从高到低</option>
+                                <option value="imdb-desc">IMDb 评分：从高到低</option>
+                                <option value="imdb-asc">IMDb 评分：从低到高</option>
+                                <option value="title">首字母拼音 (A-Z)</option>
+                            </select>
                         </div>
                     </div>
                 </div>
@@ -196,8 +150,8 @@
 
     <!-- Footer -->
     <footer class="site-footer" id="site-footer">
-        <p>Made by OrsonKrennlc with ❤️</p>
-        <p>Powered by <a href="https://github.com/OrsonKrennlc/films" target="_blank">GitHub</a></p>
+        <p>由 OrsonKrennlc 精心制作 ❤️</p>
+        <p>托管于 <a href="https://github.com/OrsonKrennlc/films" target="_blank">GitHub</a></p>
     </footer>
 
     <!-- Film Detail Modal -->
@@ -207,7 +161,8 @@
             
             <div class="modal-left">
                 <!-- Large abstract poster overlay -->
-                <img id="modal-poster" src="" style="width:100%; height:100%; object-fit:cover;" alt="Generative Cover Poster">
+                <img id="modal-poster-blur" src="" alt="" aria-hidden="true">
+                <img id="modal-poster" src="" alt="封面海报">
             </div>
             
             <div class="modal-right">
@@ -217,23 +172,31 @@
                     
                     <div class="modal-meta-row">
                         <span id="modal-rating" class="film-rating-badge badge-pg13">PG-13</span>
-                        <div style="display:flex; align-items:center; gap:5px;">
+                        <div class="modal-score-item" title="IMDb 评分">
                             <span class="imdb-logo">IMDb</span>
                             <span class="imdb-val" id="modal-imdb">7.8</span>
+                        </div>
+                        <div class="modal-score-item" title="豆瓣评分">
+                            <span class="douban-logo">豆瓣</span>
+                            <span class="douban-val" id="modal-douban">7.3</span>
+                        </div>
+                        <div class="modal-score-item" title="烂番茄新鲜度">
+                            <span class="rt-logo">🍅 烂番茄</span>
+                            <span class="rt-val" id="modal-rt">84%</span>
                         </div>
                     </div>
                     
                     <div class="modal-info-grid">
                         <div>
-                            <div class="info-label">上映年份 / Release Year</div>
+                            <div class="info-label">上映年份</div>
                             <div class="info-value mono" id="modal-year">2016</div>
                         </div>
                         <div>
-                            <div class="info-label">所属分类 / Category</div>
+                            <div class="info-label">所属分类</div>
                             <div class="info-value" id="modal-category">电影</div>
                         </div>
                         <div>
-                            <div class="info-label">硬盘分区 / Storage Location</div>
+                            <div class="info-label">位置</div>
                             <div class="info-value mono" id="modal-disk">disk1</div>
                         </div>
                     </div>
@@ -255,7 +218,7 @@
                         <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24" style="margin-right:5px;" aria-hidden="true">
                             <path d="M2.585 3.398h18.83V5.55H2.585zM6.354 8.784h11.292v6.46H6.354zm12.37-2.152v10.764H5.275V6.632H2.585v13.97h7.536v2.693H7.536v1.077h8.928v-1.077h-2.693v-2.693h7.536V6.632z"/>
                         </svg>
-                        豆瓣电影 / Douban Link
+                        豆瓣电影
                     </a>
                     <a href="" id="modal-imdb-btn" target="_blank" class="btn-secondary">在 IMDb 检索</a>
                 </div>
@@ -263,35 +226,103 @@
         </div>
     </div>
 
-    <!-- Lucky Pick Floating Action Button -->
-    <button class="fab-lucky" id="fab-lucky" aria-label="开启电影盲盒">
-        🎲
-        <span class="fab-tooltip">电影盲盒 / Lucky Pick</span>
+    <!-- Frosted Glass Floating Action Button (毛玻璃样式) -->
+    <button class="fab-lucky" id="fab-lucky" aria-label="开启电影盲盒随机抽选">
+        <span class="fab-dice" aria-hidden="true">🎲</span>
+        <span class="fab-label">电影盲盒</span>
     </button>
 
-    <!-- Lucky Pick Slot Machine Modal -->
+    <!-- Cinematic Lucky Gacha Modal -->
     <div class="modal-overlay" id="lucky-modal" role="dialog" aria-modal="true" aria-labelledby="lucky-title">
-        <div class="lucky-container">
-            <button class="modal-close" id="lucky-modal-close" aria-label="关闭对话框" style="color: #FFF; background: rgba(255,255,255,0.1);">✕</button>
+        <div class="lucky-container gacha-container">
+            <button class="modal-close" id="lucky-modal-close" aria-label="关闭对话框">✕</button>
             
-            <h2 class="lucky-title" id="lucky-title">🍿 电影盲盒 🎬</h2>
-            
-            <p style="font-size:14px; color:#aaa; margin-bottom:25px;">
-                觉得看什么太难决定？让盲盒为您在当前筛选结果中挑选一部影片。
-            </p>
-            
-            <div class="lucky-slot-machine">
-                <div class="lucky-slot-wrapper" id="lucky-slot-wrapper">
-                    <div class="slot-item">🎬 电影盲盒 🍿</div>
+            <!-- Header -->
+            <div class="gacha-header">
+                <h2 class="lucky-title" id="lucky-title">✨ 电影盲盒 · 随机抽选 ✨</h2>
+                <p class="gacha-subtitle" id="gacha-pool-info">在选定分类中抽取一部影片，今晚就看它</p>
+            </div>
+
+            <!-- Pool Selector Tabs -->
+            <div class="gacha-pool-selector" id="gacha-pool-selector">
+                <button class="pool-chip active" data-category="all">全随机 <span class="chip-count" id="pool-count-all">(274)</span></button>
+                <button class="pool-chip" data-category="电影">电影 <span class="chip-count" id="pool-count-movie">(228)</span></button>
+                <button class="pool-chip" data-category="电视剧">电视剧 <span class="chip-count" id="pool-count-tv">(31)</span></button>
+                <button class="pool-chip" data-category="纪录片">纪录片 <span class="chip-count" id="pool-count-doc">(8)</span></button>
+                <button class="pool-chip" data-category="演唱会">演唱会 <span class="chip-count" id="pool-count-concert">(7)</span></button>
+            </div>
+
+            <!-- Gacha Stage -->
+            <div class="gacha-stage" id="gacha-stage">
+                
+                <!-- Reel Stream (Active during spin) -->
+                <div class="gacha-reel-viewport" id="gacha-reel-viewport">
+                    <div class="gacha-reel-track" id="gacha-reel-track">
+                        <!-- Poster strip items injected dynamically -->
+                    </div>
+                    <!-- Spotlight overlay & center target reticle -->
+                    <div class="gacha-target-reticle" aria-hidden="true"></div>
+                </div>
+
+                <!-- 3D Card Showcase (Idle and Winner reveal) -->
+                <div class="gacha-card-showcase" id="gacha-card-showcase">
+                    <div class="card-3d-wrapper" id="card-3d-wrapper">
+                        <div class="card-flipper" id="card-flipper">
+                            
+                            <!-- Card Back (Mysterious Cinema Vault Crest) -->
+                            <div class="card-face card-back">
+                                <div class="card-back-pattern">
+                                    <div class="card-back-emblem">
+                                        <div class="emblem-film-icon">🎬</div>
+                                        <div class="emblem-text">JERRY SHEN</div>
+                                        <div class="emblem-sub">CINEMA VAULT</div>
+                                    </div>
+                                    <div class="card-back-sparkle">✦</div>
+                                </div>
+                            </div>
+
+                            <!-- Card Front (Winner Poster & Badge) -->
+                            <div class="card-face card-front" id="card-front">
+                                <img id="card-front-poster" src="" alt="获奖影片海报" class="card-front-img">
+                                <div class="card-front-badge" id="card-front-rating">PG-13</div>
+                                <div class="card-front-shine" aria-hidden="true"></div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Winner Info Details (Revealed after flip) -->
+            <div class="gacha-winner-meta" id="gacha-winner-meta">
+                <h3 class="winner-title" id="winner-title">电影名称</h3>
+                <div class="winner-en-title" id="winner-en-title">English Title</div>
+                <div class="winner-tags-row">
+                    <span class="winner-tag" id="winner-year">2024</span>
+                    <span class="winner-tag" id="winner-category">电影</span>
+                    <span class="winner-tag" id="winner-disk">disk1</span>
+                    <span class="winner-score-tag" id="winner-scores">IMDb 8.2 · 豆瓣 8.5</span>
                 </div>
             </div>
-            
-            <button class="lucky-action-btn" id="lucky-start-btn">开启电影盲盒</button>
+
+            <!-- Action Controls -->
+            <div class="gacha-actions">
+                <button class="gacha-btn-primary" id="lucky-start-btn">
+                    <span class="btn-icon" id="btn-icon">🎲</span>
+                    <span class="btn-text" id="btn-text">开始抽选</span>
+                </button>
+                <div class="gacha-btn-group" id="gacha-winner-actions" style="display: none;">
+                    <button class="gacha-btn-secondary" id="winner-detail-btn">查看影片详情</button>
+                    <button class="gacha-btn-retry" id="winner-retry-btn">再抽一次</button>
+                </div>
+            </div>
+
         </div>
     </div>
 
     <!-- Application scripts -->
     <script src="js/data.js"></script>
-    <script src="js/app.js"></script>
+    <script src="js/app.js?v=8"></script>
 </body>
 </html>

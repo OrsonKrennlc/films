@@ -135,7 +135,7 @@ function generatePosterSvg(title, rating) {
             <rect width="100%" height="100%" fill="url(#grad-${hash})" />
             ${svgContent}
             <!-- Subtitle/Accent -->
-            <text x="20" y="380" font-family="'Anonymous Pro', monospace" font-size="12" fill="${palette.accent}" opacity="0.7">${rating || 'UNRATED'}</text>
+            <text x="20" y="380" font-family="'Anonymous Pro', monospace" font-size="12" fill="${palette.accent}" opacity="0.7">${rating || '未评级'}</text>
             <text x="280" y="380" font-family="'Anonymous Pro', monospace" font-size="12" fill="${palette.accent}" opacity="0.7" text-anchor="end">${hash % 100}A</text>
         </svg>
     `;
@@ -163,6 +163,7 @@ function calculateStats() {
     let imdbCount = 0;
     
     state.stats.categoryCounts = {};
+    state.stats.diskCounts = {};
     state.stats.ratingCounts = {};
     state.stats.decadeCounts = {
         '1940s-1970s': 0,
@@ -178,9 +179,9 @@ function calculateStats() {
         let cat = film.category;
         state.stats.categoryCounts[cat] = (state.stats.categoryCounts[cat] || 0) + 1;
         
-        // Disk count tracking inside Movies
-        if (film.category === '电影' && film.disk) {
-            state.stats.categoryCounts[film.disk] = (state.stats.categoryCounts[film.disk] || 0) + 1;
+        // Location (disk) count tracking
+        if (film.disk) {
+            state.stats.diskCounts[film.disk] = (state.stats.diskCounts[film.disk] || 0) + 1;
         }
         
         // IMDb average
@@ -210,15 +211,33 @@ function calculateStats() {
     state.stats.averageImdb = imdbCount > 0 ? (imdbSum / imdbCount).toFixed(2) : 0;
 }
 
-// Write high-level statistics inside the hero panel
+// Write high-level statistics into the simple stats bar above search
 function renderStats() {
-    document.getElementById('stat-total-films').innerText = state.stats.total;
-    document.getElementById('stat-avg-imdb').innerText = state.stats.averageImdb;
+    const statsBar = document.getElementById('simple-stats-bar');
+    if (!statsBar) return;
     
-    const moviesCount = state.stats.categoryCounts['电影'] || 0;
-    const tvCount = state.stats.categoryCounts['电视剧'] || 0;
-    document.getElementById('stat-movies').innerText = moviesCount;
-    document.getElementById('stat-series').innerText = tvCount;
+    const total = state.stats.total;
+    const movies = state.stats.categoryCounts['电影'] || 0;
+    const series = state.stats.categoryCounts['电视剧'] || 0;
+    const docs = state.stats.categoryCounts['纪录片'] || 0;
+    const concerts = state.stats.categoryCounts['演唱会'] || 0;
+    const avgImdb = state.stats.averageImdb;
+
+    statsBar.innerHTML = `
+        <a href="https://orsonkrennlc.github.io/index.html#home" class="stats-author" title="Jerry Shen 个人主页">Jerry Shen</a>
+        <span class="stats-sep">/</span>
+        <span class="stats-item">共收录 <strong class="stats-num">${total}</strong> 部作品</span>
+        <span class="stats-sep">·</span>
+        <span class="stats-item">电影 <strong class="stats-num">${movies}</strong></span>
+        <span class="stats-sep">·</span>
+        <span class="stats-item">电视剧 <strong class="stats-num">${series}</strong></span>
+        <span class="stats-sep">·</span>
+        <span class="stats-item">纪录片 <strong class="stats-num">${docs}</strong></span>
+        <span class="stats-sep">·</span>
+        <span class="stats-item">演唱会 <strong class="stats-num">${concerts}</strong></span>
+        <span class="stats-sep">·</span>
+        <span class="stats-item">平均 IMDb <strong class="stats-num">${avgImdb}</strong></span>
+    `;
 }
 
 // Generate the pills for filter selections
@@ -233,74 +252,16 @@ function buildFilterSelectors() {
             ratingGroup.innerHTML += `<span class="pill" data-rating="${rating}">${rating} (${state.stats.ratingCounts[rating]})</span>`;
         }
     });
-    
-    // Render the SVG bar charts inside the expandable panel
-    renderSVGCharts();
-}
 
-// Draw pure HTML/CSS interactive bar charts representing the statistics
-function renderSVGCharts() {
-    // Rating distribution
-    const ratingChart = document.getElementById('rating-dist-chart');
-    ratingChart.innerHTML = '';
-    
-    const maxRatingVal = Math.max(...Object.values(state.stats.ratingCounts));
-    Object.keys(state.stats.ratingCounts)
-        .sort((a,b) => state.stats.ratingCounts[b] - state.stats.ratingCounts[a])
-        .forEach(rating => {
-            const count = state.stats.ratingCounts[rating];
-            const pct = maxRatingVal > 0 ? (count / maxRatingVal) * 100 : 0;
-            
-            const row = document.createElement('div');
-            row.className = 'bar-row';
-            row.title = `点击筛选分级: ${rating}`;
-            row.innerHTML = `
-                <span class="bar-name">${rating}</span>
-                <div class="bar-track">
-                    <div class="bar-fill" style="width: 0%;" data-width="${pct}%"></div>
-                </div>
-                <span class="bar-val">${count}</span>
-            `;
-            
-            row.addEventListener('click', () => {
-                const ratingPill = document.querySelector(`.pill[data-rating="${rating}"]`);
-                if (ratingPill) ratingPill.click();
-            });
-            ratingChart.appendChild(row);
+    // Location pills
+    const locationGroup = document.getElementById('filter-location-group');
+    if (locationGroup) {
+        locationGroup.innerHTML = '<span class="pill active" data-disk="all">全部位置</span>';
+        ['disk1', 'disk2', 'disk3'].forEach(disk => {
+            const count = state.stats.diskCounts[disk] || 0;
+            locationGroup.innerHTML += `<span class="pill" data-disk="${disk}">${disk} (${count}部)</span>`;
         });
-
-    // Decade distribution
-    const decadeChart = document.getElementById('decade-dist-chart');
-    decadeChart.innerHTML = '';
-    
-    const maxDecVal = Math.max(...Object.values(state.stats.decadeCounts));
-    Object.keys(state.stats.decadeCounts).forEach(decade => {
-        const count = state.stats.decadeCounts[decade];
-        const pct = maxDecVal > 0 ? (count / maxDecVal) * 100 : 0;
-        
-        const row = document.createElement('div');
-        row.className = 'bar-row';
-        row.title = `点击筛选年代: ${decade}`;
-        row.innerHTML = `
-            <span class="bar-name">${decade}</span>
-            <div class="bar-track">
-                <div class="bar-fill" style="width: 0%;" data-width="${pct}%"></div>
-            </div>
-            <span class="bar-val">${count}</span>
-        `;
-        
-        row.addEventListener('click', () => {
-            toggleDecadeFilter(decade);
-        });
-        decadeChart.appendChild(row);
-    });
-
-    // Trigger width animations on scroll/expand
-    setTimeout(() => {
-        document.querySelectorAll('.bar-fill').forEach(bar => {
-            bar.style.width = bar.getAttribute('data-width');
-        });
-    }, 100);
+    }
 }
 
 // Bind clicks & search keyups
@@ -314,17 +275,6 @@ function bindEvents() {
             const cat = pill.getAttribute('data-category');
             state.filters.category = cat;
             
-            // Show/Hide disk subfilters for Movies
-            const diskSubfilters = document.getElementById('disk-subfilters');
-            if (cat === '电影') {
-                diskSubfilters.style.display = 'flex';
-            } else {
-                diskSubfilters.style.display = 'none';
-                state.filters.disk = 'all';
-                document.querySelectorAll('#disk-subfilters .pill').forEach(p => p.classList.remove('active'));
-                document.querySelector('#disk-subfilters .pill[data-disk="all"]').classList.add('active');
-            }
-            
             // Reset decade filter if changed category
             state.filters.decade = 'all';
             updateDecadePillHighlights();
@@ -333,16 +283,20 @@ function bindEvents() {
         });
     });
 
-    // Disk subfiltering
-    document.querySelectorAll('#disk-subfilters .pill').forEach(pill => {
-        pill.addEventListener('click', (e) => {
-            document.querySelectorAll('#disk-subfilters .pill').forEach(p => p.classList.remove('active'));
+    // Location filtering
+    const locationGroup = document.getElementById('filter-location-group');
+    if (locationGroup) {
+        locationGroup.addEventListener('click', (e) => {
+            const pill = e.target.closest('.pill');
+            if (!pill) return;
+            
+            document.querySelectorAll('#filter-location-group .pill').forEach(p => p.classList.remove('active'));
             pill.classList.add('active');
             
             state.filters.disk = pill.getAttribute('data-disk');
             applyFilters();
         });
-    });
+    }
 
     // Rating filtering
     document.getElementById('filter-rating-group').addEventListener('click', (e) => {
@@ -383,24 +337,21 @@ function bindEvents() {
         renderFilms();
     });
 
-    // Expandable Analytics Dashboard toggle
-    const anaToggle = document.getElementById('toggle-analytics');
-    const anaPanel = document.getElementById('analytics-panel');
-    anaToggle.addEventListener('click', () => {
-        const isShow = anaPanel.classList.toggle('show');
-        anaToggle.innerHTML = isShow 
-            ? '收起数据图表 <svg style="transform: rotate(180deg); transition: transform 0.3s;" width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5H7z"/></svg>'
-            : '展开数据图表 <svg style="transition: transform 0.3s;" width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5H7z"/></svg>';
-            
-        // Retrigger chart anims on expand
-        if (isShow) {
-            setTimeout(() => {
-                document.querySelectorAll('.bar-fill').forEach(bar => {
-                    bar.style.width = bar.getAttribute('data-width');
-                });
-            }, 50);
-        }
-    });
+    // Collapsible Filters Toggle
+    const filterToggleBtn = document.getElementById('btn-toggle-filters');
+    const collapsibleFilters = document.getElementById('collapsible-filters');
+    const filterToggleText = document.getElementById('filter-toggle-text');
+
+    if (filterToggleBtn && collapsibleFilters) {
+        filterToggleBtn.addEventListener('click', () => {
+            const isCollapsed = collapsibleFilters.classList.toggle('collapsed');
+            filterToggleBtn.classList.toggle('active', !isCollapsed);
+            filterToggleBtn.setAttribute('aria-expanded', !isCollapsed);
+            if (filterToggleText) {
+                filterToggleText.textContent = isCollapsed ? '筛选' : '收起';
+            }
+        });
+    }
 
     // Modal Close Button & Backdrop click
     document.getElementById('modal-close').addEventListener('click', closeModal);
@@ -415,9 +366,26 @@ function bindEvents() {
         });
     });
 
-    // Floating action button - Lucky Pick
+    // Floating action button - Liquid Glass Gacha
     document.getElementById('fab-lucky').addEventListener('click', openLuckyModal);
-    document.getElementById('lucky-start-btn').addEventListener('click', runLuckySelector);
+    document.getElementById('lucky-start-btn').addEventListener('click', handleGachaButtonClick);
+    document.getElementById('winner-detail-btn').addEventListener('click', () => {
+        if (!gachaWinnerFilm) return;
+        closeLuckyModal();
+        openDetailModal(gachaWinnerFilm);
+    });
+    document.getElementById('winner-retry-btn').addEventListener('click', () => {
+        resetGachaStage();
+        startGachaSpinning();
+    });
+    document.getElementById('gacha-reel-viewport').addEventListener('click', () => {
+        if (gachaState === 'spinning') {
+            stopGachaSpinning();
+        }
+    });
+    document.querySelectorAll('#gacha-pool-selector .pool-chip').forEach(chip => {
+        chip.addEventListener('click', () => handlePoolChipClick(chip));
+    });
 }
 
 // Filter datasets and sort accordingly
@@ -429,8 +397,8 @@ function applyFilters() {
         results = results.filter(film => film.category === state.filters.category);
     }
     
-    // 2. Disk filter (sub-category)
-    if (state.filters.category === '电影' && state.filters.disk !== 'all') {
+    // 2. Location filter
+    if (state.filters.disk !== 'all') {
         results = results.filter(film => film.disk === state.filters.disk);
     }
     
@@ -473,6 +441,14 @@ function applyFilters() {
             return b.year.localeCompare(a.year);
         } else if (state.filters.sort === 'year-asc') {
             return a.year.localeCompare(b.year);
+        } else if (state.filters.sort === 'douban-desc') {
+            const scoreA = parseFloat(a.douban) || 0;
+            const scoreB = parseFloat(b.douban) || 0;
+            return scoreB - scoreA;
+        } else if (state.filters.sort === 'rt-desc') {
+            const scoreA = parseFloat(a.rotten_tomatoes) || 0;
+            const scoreB = parseFloat(b.rotten_tomatoes) || 0;
+            return scoreB - scoreA;
         } else if (state.filters.sort === 'imdb-desc') {
             const scoreA = parseFloat(a.imdb) || 0;
             const scoreB = parseFloat(b.imdb) || 0;
@@ -490,33 +466,27 @@ function applyFilters() {
     state.filteredData = results;
     
     // Update count display
-    document.getElementById('filtered-count').innerText = results.length;
+    const countEl = document.getElementById('filtered-count');
+    if (countEl) countEl.innerText = results.length;
+
+    // Toggle indicator on filter button if filters are customized
+    const filterToggleBtn = document.getElementById('btn-toggle-filters');
+    if (filterToggleBtn) {
+        const hasActiveFilter = state.filters.category !== 'all' || 
+                                state.filters.disk !== 'all' || 
+                                state.filters.rating !== 'all';
+        filterToggleBtn.classList.toggle('has-filter', hasActiveFilter);
+    }
     
     renderFilms();
 }
 
-// Function to trigger decade filtering from charts
-function toggleDecadeFilter(decade) {
-    // Toggle state
-    if (state.filters.decade === decade) {
-        state.filters.decade = 'all';
-    } else {
-        state.filters.decade = decade;
-    }
-    
-    updateDecadePillHighlights();
-    applyFilters();
-}
-
 function updateDecadePillHighlights() {
-    // If decade filter is active, highlight the title or display a reset helper
     const subTitle = document.querySelector('.glitch-subtitle');
+    if (!subTitle) return;
     if (state.filters.decade !== 'all') {
-        subTitle.innerHTML = `已选择年代: ${state.filters.decade} (点击图表行可重置)`;
+        subTitle.innerHTML = `已选择年代: ${state.filters.decade}`;
         subTitle.style.color = '#48a977';
-    } else {
-        subTitle.innerHTML = 'A curated collection of 274 cinematic works, documentaries, concerts, and series.';
-        subTitle.style.color = '#CBCBCB';
     }
 }
 
@@ -570,17 +540,22 @@ function renderFilms() {
                         ${film.english_title ? `<p class="film-title-en" title="${film.english_title}">${film.english_title}</p>` : ''}
                     </div>
                     <div class="film-meta-row">
-                        <span class="film-year-tag">${film.year}</span>
+                        <span class="film-year-tag">${film.year} · ${film.category}</span>
                         ${film.rating ? `<span class="film-rating-badge ${ratingClass}">${film.rating}</span>` : ''}
                     </div>
-                    <div class="film-score-row" style="margin-top: 8px; justify-content: space-between;">
-                        ${film.imdb ? `
-                            <div style="display:flex; align-items:center; gap:5px;">
-                                <span class="imdb-logo">IMDb</span>
-                                <span class="imdb-val">${film.imdb}</span>
-                            </div>
-                        ` : '<span style="font-size:12px; color:#888;">N/A</span>'}
-                        <span style="font-size: 12px; color: var(--text-primary); font-family: var(--font-en); font-weight:700;">${film.category}</span>
+                    <div class="film-score-row" style="margin-top: 10px;">
+                        <div class="score-badge-group" title="IMDb 评分">
+                            <span class="imdb-logo">IMDb</span>
+                            <span class="imdb-val">${film.imdb || '—'}</span>
+                        </div>
+                        <div class="score-badge-group" title="豆瓣评分">
+                            <span class="douban-logo">豆</span>
+                            <span class="douban-val">${film.douban || '—'}</span>
+                        </div>
+                        <div class="score-badge-group" title="烂番茄新鲜度">
+                            <span class="rt-logo">🍅</span>
+                            <span class="rt-val">${film.rotten_tomatoes ? film.rotten_tomatoes + '%' : '—'}</span>
+                        </div>
                     </div>
                 </div>
             `;
@@ -608,6 +583,8 @@ function renderFilms() {
                     <th>年份</th>
                     <th>类别</th>
                     <th>分级</th>
+                    <th>豆瓣</th>
+                    <th>烂番茄</th>
                     <th>IMDb</th>
                     <th>位置</th>
                 </tr>
@@ -642,6 +619,8 @@ function renderFilms() {
                 <td class="list-year">${film.year}</td>
                 <td><span style="font-family: var(--font-zh); font-size:13px; color:#4a4a4a;">${film.category}</span></td>
                 <td>${film.rating ? `<span class="film-rating-badge ${ratingClass}">${film.rating}</span>` : '—'}</td>
+                <td class="list-douban">${film.douban ? film.douban : '—'}</td>
+                <td class="list-rt">${film.rotten_tomatoes ? film.rotten_tomatoes + '%' : '—'}</td>
                 <td class="list-imdb">${film.imdb ? film.imdb : '—'}</td>
                 <td><span style="font-family: var(--font-en); font-size:12px; color:#888;">${film.disk || '—'}</span></td>
             `;
@@ -676,11 +655,15 @@ function openDetailModal(film) {
     
     // Modal Left Poster
     const fallbackSrc = generatePosterSvg(film.title, film.rating);
+    const posterSrc = film.poster && film.poster !== "" ? film.poster : fallbackSrc;
     const modalPoster = document.getElementById('modal-poster');
-    modalPoster.src = film.poster && film.poster !== "" ? film.poster : fallbackSrc;
+    const modalPosterBlur = document.getElementById('modal-poster-blur');
+    if (modalPosterBlur) modalPosterBlur.src = posterSrc;
+    modalPoster.src = posterSrc;
     modalPoster.onerror = function() {
         this.onerror = null;
         this.src = fallbackSrc;
+        if (modalPosterBlur) modalPosterBlur.src = fallbackSrc;
     };
     
     // Modal Right Details
@@ -696,6 +679,8 @@ function openDetailModal(film) {
     document.getElementById('modal-category').innerText = film.category;
     document.getElementById('modal-disk').innerText = film.disk || '—';
     document.getElementById('modal-imdb').innerText = film.imdb || '—';
+    document.getElementById('modal-douban').innerText = film.douban || '—';
+    document.getElementById('modal-rt').innerText = film.rotten_tomatoes ? `${film.rotten_tomatoes}%` : '—';
     
     // Rating tag
     const ratingTag = document.getElementById('modal-rating');
@@ -722,7 +707,7 @@ function openDetailModal(film) {
     if (film.why) {
         noteBlock.style.display = 'block';
         noteBlock.innerHTML = `
-            <div class="curator-note-title">推荐缘由 / Curator's Note</div>
+            <div class="curator-note-title">推荐缘由</div>
             <p>"${film.why}"</p>
         `;
     } else {
@@ -753,108 +738,375 @@ function closeModal() {
     document.body.style.overflow = ''; // Restore scroll
 }
 
-// Lucky Pick (Box Selection) System
-let isLuckyRunning = false;
+// ==========================================
+// Cinematic Gacha Random Film Picker
+// ==========================================
+let gachaState = 'idle'; // 'idle' | 'spinning' | 'stopping' | 'revealed'
+let gachaSelectedCategory = 'all'; // 'all' | '电影' | '电视剧' | '纪录片' | '演唱会'
+let gachaWinnerFilm = null;
+let gachaRafId = null;
+let gachaCurrentX = 0;
+let gachaLastTime = null;
+
+// Gacha Reel Dimensions & Constants
+const GACHA_ITEM_WIDTH = 170;
+const GACHA_ITEM_GAP = 16;
+const GACHA_SLOT_WIDTH = GACHA_ITEM_WIDTH + GACHA_ITEM_GAP; // 186px
+const GACHA_SPIN_SPEED = 1350; // px/sec steady spinning velocity
+
+// Helper to get candidate films based on category
+function getGachaPoolCandidates() {
+    if (gachaSelectedCategory === 'all') {
+        return FILMS_DATA;
+    }
+    return FILMS_DATA.filter(film => film.category === gachaSelectedCategory);
+}
+
+// Update counts on the category chips
+function updateGachaPoolCounts() {
+    const totalAll = FILMS_DATA.length;
+    const totalMovie = FILMS_DATA.filter(f => f.category === '电影').length;
+    const totalTv = FILMS_DATA.filter(f => f.category === '电视剧').length;
+    const totalDoc = FILMS_DATA.filter(f => f.category === '纪录片').length;
+    const totalConcert = FILMS_DATA.filter(f => f.category === '演唱会').length;
+
+    const elAll = document.getElementById('pool-count-all');
+    if (elAll) elAll.innerText = `(${totalAll})`;
+    const elMovie = document.getElementById('pool-count-movie');
+    if (elMovie) elMovie.innerText = `(${totalMovie})`;
+    const elTv = document.getElementById('pool-count-tv');
+    if (elTv) elTv.innerText = `(${totalTv})`;
+    const elDoc = document.getElementById('pool-count-doc');
+    if (elDoc) elDoc.innerText = `(${totalDoc})`;
+    const elConcert = document.getElementById('pool-count-concert');
+    if (elConcert) elConcert.innerText = `(${totalConcert})`;
+}
 
 function openLuckyModal() {
     const modal = document.getElementById('lucky-modal');
     modal.classList.add('active');
     document.body.style.overflow = 'hidden';
-    
-    // Reset slot display
-    const wrapper = document.getElementById('lucky-slot-wrapper');
-    wrapper.style.transform = 'translateY(0px)';
-    wrapper.innerHTML = '<div class="slot-item">🎬 电影盲盒 🍿</div>';
-    
-    document.getElementById('lucky-start-btn').disabled = false;
-    document.getElementById('lucky-start-btn').innerText = '开启电影盲盒';
+
+    updateGachaPoolCounts();
+    resetGachaStage();
 }
 
 function closeLuckyModal() {
-    if (isLuckyRunning) return; // Prevent closing while running selector
+    if (gachaState === 'spinning' || gachaState === 'stopping') return;
     const modal = document.getElementById('lucky-modal');
     modal.classList.remove('active');
     document.body.style.overflow = '';
+    if (gachaRafId) {
+        cancelAnimationFrame(gachaRafId);
+        gachaRafId = null;
+    }
 }
 
-function runLuckySelector() {
-    if (isLuckyRunning) return;
-    
-    // Select from current filtered items
-    const candidates = state.filteredData;
-    if (candidates.length === 0) {
-        alert('当前没有可筛选的影片，请清除部分筛选条件后再试。');
+function createReelItem(film) {
+    const item = document.createElement('div');
+    item.className = 'reel-item';
+    const posterSrc = film.poster || generatePosterSvg(film.title, film.rating);
+    item.innerHTML = `
+        <img src="${posterSrc}" alt="${film.title}" loading="lazy">
+        <div class="reel-rating-badge">${film.rating || 'UR'}</div>
+        <div class="reel-item-title">${film.title}</div>
+        <div class="reel-shine" aria-hidden="true"></div>
+    `;
+    item._film = film;
+    return item;
+}
+
+function updateReelItem(item, film) {
+    if (!item || !film) return;
+    const posterSrc = film.poster || generatePosterSvg(film.title, film.rating);
+    const img = item.querySelector('img');
+    if (img && img.src !== posterSrc) {
+        img.src = posterSrc;
+        img.alt = film.title;
+    }
+    const badge = item.querySelector('.reel-rating-badge');
+    if (badge) badge.innerText = film.rating || 'UR';
+    const title = item.querySelector('.reel-item-title');
+    if (title) title.innerText = film.title;
+    item._film = film;
+}
+
+function resetGachaStage() {
+    if (gachaRafId) {
+        cancelAnimationFrame(gachaRafId);
+        gachaRafId = null;
+    }
+    gachaState = 'idle';
+    gachaLastTime = null;
+
+    const stage = document.getElementById('gacha-stage');
+    if (stage) {
+        stage.classList.remove('spinning', 'stopping', 'revealed');
+    }
+
+    const track = document.getElementById('gacha-reel-track');
+    if (track) {
+        track.classList.remove('winner-revealed');
+        track.innerHTML = '';
+        track.style.transform = 'translateX(0px)';
+    }
+
+    const winnerMeta = document.getElementById('gacha-winner-meta');
+    if (winnerMeta) winnerMeta.classList.remove('visible');
+
+    const winnerActions = document.getElementById('gacha-winner-actions');
+    if (winnerActions) winnerActions.style.display = 'none';
+
+    const startBtn = document.getElementById('lucky-start-btn');
+    if (startBtn) {
+        startBtn.style.display = 'inline-flex';
+        startBtn.classList.remove('stopping-state');
+        startBtn.disabled = false;
+        document.getElementById('btn-icon').innerText = '🎲';
+        document.getElementById('btn-text').innerText = '开始抽选';
+    }
+
+    // Enable pool chips
+    document.querySelectorAll('.pool-chip').forEach(c => c.removeAttribute('disabled'));
+}
+
+function handlePoolChipClick(chip) {
+    if (gachaState === 'spinning' || gachaState === 'stopping') return;
+
+    document.querySelectorAll('.pool-chip').forEach(c => c.classList.remove('active'));
+    chip.classList.add('active');
+    gachaSelectedCategory = chip.getAttribute('data-category');
+
+    const poolInfo = document.getElementById('gacha-pool-info');
+    const catName = gachaSelectedCategory === 'all' ? '全片库' : gachaSelectedCategory;
+    const candidates = getGachaPoolCandidates();
+    if (poolInfo) {
+        poolInfo.innerText = `在 ${catName}（共 ${candidates.length} 部作品）中抽取一部影片`;
+    }
+
+    resetGachaStage();
+}
+
+function handleGachaButtonClick() {
+    if (gachaState === 'idle') {
+        startGachaSpinning();
+    } else if (gachaState === 'spinning') {
+        stopGachaSpinning();
+    }
+}
+
+function startGachaSpinning() {
+    const candidates = getGachaPoolCandidates();
+    if (!candidates || candidates.length === 0) {
+        alert('当前分类暂无可抽选的影片！');
         return;
     }
-    
-    isLuckyRunning = true;
-    const btn = document.getElementById('lucky-start-btn');
-    btn.disabled = true;
-    btn.innerText = '抽选中...';
-    
-    const wrapper = document.getElementById('lucky-slot-wrapper');
-    wrapper.innerHTML = '';
-    
-    // Create an array of random elements to loop through in slot animation
-    const slotCount = 30; // total steps
-    const animationFilms = [];
-    
-    for (let i = 0; i < slotCount - 1; i++) {
+
+    gachaState = 'spinning';
+    gachaLastTime = null;
+
+    // Disable pool chips during spin
+    document.querySelectorAll('.pool-chip').forEach(c => c.setAttribute('disabled', 'true'));
+
+    const stage = document.getElementById('gacha-stage');
+    stage.classList.remove('stopping', 'revealed');
+    stage.classList.add('spinning');
+
+    const winnerMeta = document.getElementById('gacha-winner-meta');
+    winnerMeta.classList.remove('visible');
+
+    const winnerActions = document.getElementById('gacha-winner-actions');
+    winnerActions.style.display = 'none';
+
+    // Switch main button to "Stop"
+    const startBtn = document.getElementById('lucky-start-btn');
+    startBtn.style.display = 'inline-flex';
+    startBtn.classList.add('stopping-state');
+    startBtn.disabled = false;
+    document.getElementById('btn-icon').innerText = '⏹';
+    document.getElementById('btn-text').innerText = '停！揭晓影片';
+
+    // Populate track with 28 items
+    const track = document.getElementById('gacha-reel-track');
+    track.classList.remove('winner-revealed');
+    track.innerHTML = '';
+
+    const itemCount = 28;
+    for (let i = 0; i < itemCount; i++) {
         const randIndex = Math.floor(Math.random() * candidates.length);
-        animationFilms.push(candidates[randIndex]);
+        const item = createReelItem(candidates[randIndex]);
+        track.appendChild(item);
     }
-    
-    // Final chosen film
-    const finalIndex = Math.floor(Math.random() * candidates.length);
-    const finalFilm = candidates[finalIndex];
-    animationFilms.push(finalFilm);
-    
-    // Build vertical slot items inside wrapper
-    animationFilms.forEach(film => {
-        const item = document.createElement('div');
-        item.className = 'slot-item';
-        item.innerText = film.title;
-        wrapper.appendChild(item);
-    });
-    
-    // Slots are 120px tall
-    // Scroll down to the final item: translateY = -(slotCount - 1) * 120
-    const startY = 0;
-    const endY = -(slotCount - 1) * 120;
-    
-    // Staged Deceleration Loop using requestAnimationFrame
-    let currentY = startY;
-    let speed = 40; // Initial scroll speed (px per frame)
-    const deceleration = 0.965; // exponential deceleration factor
-    
-    function animate() {
-        currentY -= speed;
-        
-        // Loop back up if speed is high, creating rolling loop effect
-        if (currentY < endY) {
-            // Once we hit or go past endY, we can cap it and slow down to stop
-            currentY = endY;
-            speed = 0;
+
+    gachaCurrentX = 0;
+    track.style.transform = `translateX(0px)`;
+
+    function spinLoop(now) {
+        if (gachaState !== 'spinning') return;
+
+        if (gachaLastTime === null) {
+            gachaLastTime = now;
+            gachaRafId = requestAnimationFrame(spinLoop);
+            return;
         }
-        
-        wrapper.style.transform = `translateY(${currentY}px)`;
-        
-        // Decelerate
-        speed *= deceleration;
-        
-        if (speed > 0.5 && currentY > endY) {
-            requestAnimationFrame(animate);
+
+        const dt = Math.min((now - gachaLastTime) / 1000, 0.05); // cap delta time
+        gachaLastTime = now;
+
+        gachaCurrentX -= GACHA_SPIN_SPEED * dt;
+
+        // Infinite conveyor belt wrapping:
+        // When first element fully leaves view on left, move it to end and shift coordinate by slot width
+        while (gachaCurrentX <= -GACHA_SLOT_WIDTH) {
+            const firstChild = track.firstElementChild;
+            const randIndex = Math.floor(Math.random() * candidates.length);
+            updateReelItem(firstChild, candidates[randIndex]);
+            track.appendChild(firstChild);
+            gachaCurrentX += GACHA_SLOT_WIDTH;
+        }
+
+        track.style.transform = `translateX(${gachaCurrentX}px)`;
+        gachaRafId = requestAnimationFrame(spinLoop);
+    }
+
+    gachaRafId = requestAnimationFrame(spinLoop);
+}
+
+function stopGachaSpinning() {
+    if (gachaState !== 'spinning') return;
+    gachaState = 'stopping';
+
+    if (gachaRafId) {
+        cancelAnimationFrame(gachaRafId);
+        gachaRafId = null;
+    }
+
+    const startBtn = document.getElementById('lucky-start-btn');
+    startBtn.disabled = true;
+    startBtn.classList.remove('stopping-state');
+    document.getElementById('btn-icon').innerText = '⏳';
+    document.getElementById('btn-text').innerText = '正在锁定...';
+
+    const stage = document.getElementById('gacha-stage');
+    stage.classList.remove('spinning');
+    stage.classList.add('stopping');
+
+    const candidates = getGachaPoolCandidates();
+    // Pick the winning film
+    gachaWinnerFilm = candidates[Math.floor(Math.random() * candidates.length)];
+
+    const track = document.getElementById('gacha-reel-track');
+    const viewport = document.getElementById('gacha-reel-viewport');
+    const viewportWidth = viewport.clientWidth || 550;
+
+    // Viewport center is viewportWidth / 2.
+    // An item centered in viewport has its left edge at (viewportWidth - GACHA_ITEM_WIDTH) / 2.
+    const centerOffset = (viewportWidth - GACHA_ITEM_WIDTH) / 2;
+
+    // Select target slot K in the track (index 10 is well off-screen to the right)
+    const K = 10;
+    const targetItem = track.children[K];
+    if (targetItem) {
+        updateReelItem(targetItem, gachaWinnerFilm);
+    }
+
+    // Mathematical stop position where track.children[K] is centered in reticle:
+    // ScreenLeft(K) = X_final + K * GACHA_SLOT_WIDTH = centerOffset
+    // => X_final = centerOffset - (K * GACHA_SLOT_WIDTH)
+    const X_final = centerOffset - (K * GACHA_SLOT_WIDTH);
+
+    // Current position X_0:
+    const X_0 = gachaCurrentX;
+
+    // Actual travel distance:
+    const D = X_0 - X_final; // D > 0
+
+    // PES 2021 Uniform Deceleration Physics Model:
+    // Initial velocity v_0 = GACHA_SPIN_SPEED (px/s).
+    // Velocity v(t) = v_0 * (1 - t / T).
+    // Initial speed has ZERO jump: ds/dt at t=0 is exactly v_0!
+    // Final speed is 0: ds/dt at t=T is 0.
+    // Total duration T = 2 * D / v_0.
+    const v0 = GACHA_SPIN_SPEED;
+    const duration = (2 * D / v0) * 1000; // in milliseconds
+
+    const startTime = performance.now();
+
+    function decelerateLoop(now) {
+        const elapsed = now - startTime;
+        const u = Math.min(Math.max(elapsed / duration, 0), 1);
+
+        // Uniform deceleration equation: s(u) = D * (2*u - u^2)
+        // Check: ds/du = D * (2 - 2u). At u=0: ds/dt = (ds/du)*(1/T) = 2*D/T = v0.
+        // At u=1: ds/dt = 0.
+        // Constant acceleration: a = -v0 / T.
+        const currentPos = X_0 - (D * (2 * u - (u * u)));
+        gachaCurrentX = currentPos;
+        track.style.transform = `translateX(${currentPos}px)`;
+
+        if (u < 1) {
+            gachaRafId = requestAnimationFrame(decelerateLoop);
         } else {
-            // Animation finished
-            wrapper.style.transform = `translateY(${endY}px)`;
-            
-            setTimeout(() => {
-                isLuckyRunning = false;
-                closeLuckyModal();
-                openDetailModal(finalFilm);
-            }, 800); // Wait 800ms to show the result clearly, then pop modal
+            // Deceleration complete! Lock EXACTLY at X_final with 0px error
+            gachaCurrentX = X_final;
+            track.style.transform = `translateX(${X_final}px)`;
+
+            // Trigger winner reveal sequence
+            revealWinner(gachaWinnerFilm, targetItem);
         }
     }
-    
-    requestAnimationFrame(animate);
+
+    gachaRafId = requestAnimationFrame(decelerateLoop);
+}
+
+function revealWinner(film, winningItem) {
+    gachaState = 'revealed';
+
+    const stage = document.getElementById('gacha-stage');
+    stage.classList.remove('stopping');
+    stage.classList.add('revealed');
+
+    const track = document.getElementById('gacha-reel-track');
+    track.classList.add('winner-revealed');
+
+    // Add lock & shine to winning item
+    if (winningItem) {
+        winningItem.classList.add('winner-locked');
+    }
+
+    // Populate Winner Details
+    document.getElementById('winner-title').innerText = film.title;
+    document.getElementById('winner-en-title').innerText = film.en_title || '';
+    document.getElementById('winner-year').innerText = film.year || '未知年份';
+    document.getElementById('winner-category').innerText = film.category || '电影';
+    document.getElementById('winner-disk').innerText = film.disk || 'disk1';
+
+    let scores = [];
+    if (film.imdb) scores.push(`IMDb ${film.imdb}`);
+    if (film.douban) scores.push(`豆瓣 ${film.douban}`);
+    if (film.rotten_tomatoes) scores.push(`烂番茄 ${film.rotten_tomatoes}%`);
+    document.getElementById('winner-scores').innerText = scores.join(' · ') || '暂无评分';
+
+    // 200ms after lock, trigger the 3D flip on the winning card
+    setTimeout(() => {
+        if (winningItem) {
+            winningItem.classList.add('flipped-reveal');
+        }
+
+        // Show metadata smoothly
+        setTimeout(() => {
+            const winnerMeta = document.getElementById('gacha-winner-meta');
+            if (winnerMeta) winnerMeta.classList.add('visible');
+
+            // Switch action buttons
+            const startBtn = document.getElementById('lucky-start-btn');
+            if (startBtn) startBtn.style.display = 'none';
+
+            const winnerActions = document.getElementById('gacha-winner-actions');
+            if (winnerActions) winnerActions.style.display = 'flex';
+
+            // Re-enable pool chips
+            document.querySelectorAll('.pool-chip').forEach(c => c.removeAttribute('disabled'));
+        }, 350);
+    }, 200);
 }
