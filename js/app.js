@@ -181,7 +181,10 @@ function calculateStats() {
         
         // Location (disk) count tracking
         if (film.disk) {
-            state.stats.diskCounts[film.disk] = (state.stats.diskCounts[film.disk] || 0) + 1;
+            const disks = film.disk.split(/[,，/ ]+/).map(d => d.trim()).filter(Boolean);
+            disks.forEach(d => {
+                state.stats.diskCounts[d] = (state.stats.diskCounts[d] || 0) + 1;
+            });
         }
         
         // IMDb average
@@ -257,7 +260,14 @@ function buildFilterSelectors() {
     const locationGroup = document.getElementById('filter-location-group');
     if (locationGroup) {
         locationGroup.innerHTML = '<span class="pill active" data-disk="all">全部位置</span>';
-        ['disk1', 'disk2', 'disk3'].forEach(disk => {
+        const diskOrder = { 'disk1': 1, 'disk2': 2, 'disk3': 3, '阿里云盘': 4 };
+        const sortedDisks = Object.keys(state.stats.diskCounts).sort((a, b) => {
+            const ordA = diskOrder[a] || 99;
+            const ordB = diskOrder[b] || 99;
+            if (ordA !== ordB) return ordA - ordB;
+            return a.localeCompare(b);
+        });
+        sortedDisks.forEach(disk => {
             const count = state.stats.diskCounts[disk] || 0;
             locationGroup.innerHTML += `<span class="pill" data-disk="${disk}">${disk} (${count}部)</span>`;
         });
@@ -399,7 +409,11 @@ function applyFilters() {
     
     // 2. Location filter
     if (state.filters.disk !== 'all') {
-        results = results.filter(film => film.disk === state.filters.disk);
+        results = results.filter(film => {
+            if (!film.disk) return false;
+            const disks = film.disk.split(/[,，/ ]+/).map(d => d.trim());
+            return disks.includes(state.filters.disk);
+        });
     }
     
     // 3. Rating filter
