@@ -4180,7 +4180,7 @@ const FILMS_DATA = [
     "why": "作为看了首映的人…负责任地讲一句，虽然有些搞笑模式很老梗，但是真的哈哈哈不停…一瞬间就过了一个半小时…要说缺点就是男女主情感发展过于迅猛，最后的大拯救显得有些敷衍，结尾略显仓促…好吧，我和老公就是去还星爷票钱的…ps张雨绮身材也太好了吧！气场真是杠杠的～王全安是真瞎…",
     "category": "电影",
     "disk": "阿里云盘",
-    "poster": "https://image.tmdb.org/t/p/w500/32Tb6HZc8yAWqHesMSMnMozr6pi.jpg",
+    "poster": "https://image.tmdb.org/t/p/w500/8YVB8VxQqx3J1FtOVvoHybBKNPS.jpg",
     "english_title": "The Mermaid",
     "douban": "6.7",
     "rotten_tomatoes": "95"
@@ -4768,7 +4768,7 @@ const FILMS_DATA = [
     "why": "我记得你的八十年代情怀，你的新浪潮喜好，你钟意参悟的人生，你爱轻巧提起的沉重话题。我猜你肯定会喜欢许鞍华，可惜我们都没有共坐看过哪一部。",
     "category": "电影",
     "disk": "阿里云盘",
-    "poster": "https://image.tmdb.org/t/p/w500/pjpWWDj2I4w50BQt0j8rXV1UVZR.jpg",
+    "poster": "https://image.tmdb.org/t/p/w500/bdyxE6bXtozYG2jQiWKZUz3u4LD.jpg",
     "english_title": "Boat People",
     "douban": "8.5",
     "rotten_tomatoes": ""
@@ -4782,7 +4782,7 @@ const FILMS_DATA = [
     "why": "李安的生活总是柳暗花明与愈发透彻，杨德昌的生活总是无可出逃与一直疲惫，许鞍华的生活就是生活，没有出离心也没有歌颂心，得过而不且过。",
     "category": "电影",
     "disk": "阿里云盘",
-    "poster": "https://image.tmdb.org/t/p/w500/cY0T5UhoAPD4Ffgj6jestjmUMtj.jpg",
+    "poster": "https://image.tmdb.org/t/p/w500/qUDf6egeJjX5tuX5tAXWv4temBs.jpg",
     "english_title": "Summer Snow",
     "douban": "8.9",
     "rotten_tomatoes": ""
@@ -5292,7 +5292,7 @@ const FILMS_DATA = [
     "rotten_tomatoes": "83"
   },
   {
-    "title": "我妻子的故事",
+    "title": "吾妻之话",
     "link": "https://movie.douban.com/subject/26967870/",
     "year": "2021",
     "rating": "NR",
@@ -5300,8 +5300,8 @@ const FILMS_DATA = [
     "why": "#TIFF21 第12场 “当有人问我这糟糕的世界还有什么是完美的，我会回答：蕾雅·赛杜”。",
     "category": "电影",
     "disk": "阿里云盘",
-    "poster": "https://image.tmdb.org/t/p/w500/v6K1zfbSyIc4ayY8VFDdgEah1vU.jpg",
-    "english_title": "The Story of My Wife",
+    "poster": "https://image.tmdb.org/t/p/w500/4PilF6fzZpbHVuT0EIYwqElSyc0.jpg",
+    "english_title": "A feleségem története",
     "douban": "6.5",
     "rotten_tomatoes": "30"
   },
@@ -5321,16 +5321,16 @@ const FILMS_DATA = [
   },
   {
     "title": "生而为人",
-    "link": "https://movie.douban.com/subject/35370934/",
-    "year": "2021",
+    "link": "https://movie.douban.com/subject/34952350/",
+    "year": "2020",
     "rating": "NR",
     "imdb": "5.4",
-    "why": "题材也太好了 几个事件的出现都太刻意了  完全没有心理层面的一些表现  其实这个题材设身处地的想想 还是挺可怕的 整个心理的建设 包括父母处理这个事情的态度",
+    "why": "暗到极致的自然光，不平稳的画面，现场收声，几乎利用纪录片的手法来营造了一个空寂、遗忘的氛围。私人化被抛弃的某种程度，记忆和人性能否共存。",
     "category": "电影",
     "disk": "阿里云盘",
     "poster": "https://image.tmdb.org/t/p/w500/qwGRTBVfUTEnNBQNg14S1Hrjzfi.jpg",
     "english_title": "The Trouble with Being Born",
-    "douban": "5.7",
+    "douban": "6.2",
     "rotten_tomatoes": "93"
   },
   {
@@ -5384,8 +5384,8 @@ const FILMS_DATA = [
     "why": "王朔和沈旭佳，王朔和徐静蕾，王朔和王子文。",
     "category": "电影",
     "disk": "阿里云盘",
-    "poster": "https://image.tmdb.org/t/p/w500/fRQ3JV67ADyTrRNyXqefqJkJsD4.jpg",
-    "english_title": "Deception",
+    "poster": "https://image.tmdb.org/t/p/w500/xT261ctrOccm8fXDAYQPm3Zbyh6.jpg",
+    "english_title": "Tromperie",
     "douban": "6.1",
     "rotten_tomatoes": "53"
   },
@@ -5412,7 +5412,7 @@ const FILMS_DATA = [
     "why": "这片大概是有戒色吧的投资吧，充分说明了万恶淫为首的道理，这幕后花絮看完了，希望也有机会看到《农夫的女儿们》的正片。",
     "category": "电影",
     "disk": "阿里云盘",
-    "poster": "https://image.tmdb.org/t/p/w500/kgA1JQ5szdoUF5X5y9TgTBILJeU.jpg",
+    "poster": "https://image.tmdb.org/t/p/w500/lopZSVtXzhFY603E9OqF7O1YKsh.jpg",
     "english_title": "X",
     "douban": "6.4",
     "rotten_tomatoes": "94"
@@ -5440,7 +5440,7 @@ const FILMS_DATA = [
     "why": "FCVQ2019.编导作为作者最成功的就是把妓女这一职业在社会层面上彻底无罪化，当然自身也意识到这一处理，所以在后面和律师的戏份中表明哪怕是在这种极端完美受害者的情况下，哪怕是在观念相对开放，近50年前就已拍出白日美人的法国，女主作为妓女依然不被大众接受。女主在片子前半段在家庭生活中的压抑感和从事妓女职业后获取的自由形成强烈反差，这个自由有二，一是生活自由，另为财务自由。前者的表现在于将孩子托付给丈夫管理后和友人自由荡漾在巴黎里，这其实和丈夫出轨约炮的期望是一样的，中产家庭生活静静地毁掉了一个人的自由，这应该也是很多单身人士的恐惧所在，但这种自由的来源在后面被一场和孩子和友人在室外阳光下一起玩耍的戏份给掩盖了。后者非常讽刺，坐办公室小方格的工作给与人在财务上的安全感远不及卖淫高，欺贫不欺娼。",
     "category": "电影",
     "disk": "阿里云盘",
-    "poster": "https://image.tmdb.org/t/p/w500/iEEtQs1mPz3kvvaEFR7HVnME9Or.jpg",
+    "poster": "https://image.tmdb.org/t/p/w500/vlBr2E4lqpjOKfIy6UqC5vdInVs.jpg",
     "english_title": "Alice",
     "douban": "6.2",
     "rotten_tomatoes": "90"
@@ -5454,7 +5454,7 @@ const FILMS_DATA = [
     "why": "电影没啥问题，但歌真的难听，二元共存太难了，耳朵想谋杀眼睛让我打0星。",
     "category": "电影",
     "disk": "阿里云盘",
-    "poster": "https://image.tmdb.org/t/p/w500/qEfyTiF1BNrYjZgTExpQYVL49Y0.jpg",
+    "poster": "https://image.tmdb.org/t/p/w500/4FTnypxpGltJdIARrfFsP31pGTp.jpg",
     "english_title": "Annette",
     "douban": "6.9",
     "rotten_tomatoes": "72"
@@ -5482,7 +5482,7 @@ const FILMS_DATA = [
     "why": "3.5，殖民史是如何吊诡在摄影这一媒介中被“美化”，被景观化……古典做作的匠心和神秘共置。",
     "category": "电影",
     "disk": "阿里云盘",
-    "poster": "https://image.tmdb.org/t/p/w500/86dxo38ksU7hnCpbfYgIJ3jA6kJ.jpg",
+    "poster": "https://image.tmdb.org/t/p/w500/rDm84pyplHIa9p9sEwg2zKK3TQP.jpg",
     "english_title": "White on White",
     "douban": "6.4",
     "rotten_tomatoes": "95"
@@ -5552,7 +5552,7 @@ const FILMS_DATA = [
     "why": "中国最常见的知识分子（被歪曲成）有两种，一种精致利己（严格不算），一种追求出仕想当国师（古往今来）。他们喜欢“为民请命”获取崇高感，或者常指责抱怨所谓“人民”愚、蠢、支；他们沉溺于视听和技巧的花哨，或者从来没真正尊重和重视自己的观众。李樯说许鞍华是知识分子，但许不是这两种，许是真正的知识分子。对时代中的个体有体恤，有理解，有尊敬，而这些构建自她对周遭的观察，对他人的观照，尤其是对自身的省悟。可惜，中国有许多许多技巧上比许鞍华好且好很多的导演，但许鞍华的良心，仅此一颗。",
     "category": "纪录片",
     "disk": "阿里云盘",
-    "poster": "https://image.tmdb.org/t/p/w500/rZnKajqL1rLqvb41WxDvYDG5D0x.jpg",
+    "poster": "https://image.tmdb.org/t/p/w500/dz1AQZhsaHxnW1saLSzQNnGdZSh.jpg",
     "english_title": "Keep Rolling",
     "douban": "8.8",
     "rotten_tomatoes": ""
@@ -5570,20 +5570,6 @@ const FILMS_DATA = [
     "english_title": "Prayers for the Stolen",
     "douban": "6.9",
     "rotten_tomatoes": "96"
-  },
-  {
-    "title": "人在三和",
-    "link": "https://movie.douban.com/subject/30337189/",
-    "year": "2018",
-    "rating": "NR",
-    "imdb": "7.5",
-    "why": "",
-    "category": "纪录片",
-    "disk": "阿里云盘",
-    "poster": "https://image.tmdb.org/t/p/w500/8sqzjJpIaJatZriqIrOaN7sjfqu.jpg",
-    "english_title": "Sanhe Gods",
-    "douban": "",
-    "rotten_tomatoes": ""
   },
   {
     "title": "加加林",
@@ -5636,7 +5622,7 @@ const FILMS_DATA = [
     "why": "就只好奇郭富城和Roy是什么关系？ Roy他俩会不会是同性恋，之后借前妻晓雪的肚子生了儿子？？？有人站队吗？",
     "category": "电影",
     "disk": "阿里云盘",
-    "poster": "https://image.tmdb.org/t/p/w500/owGb1SExjoEZWOvPx6hAVAi2B7D.jpg",
+    "poster": "https://image.tmdb.org/t/p/w500/1KBt4FqMaY2hdOEkS4inNvDBxLz.jpg",
     "english_title": "Home Sweet Home",
     "douban": "5.3",
     "rotten_tomatoes": "15"
@@ -5650,7 +5636,7 @@ const FILMS_DATA = [
     "why": "也就一百年前吧，全球的大部分人类女性，还都在经历着跟这些奶牛差不多的人生。即使是现在，也还有很多很多的女性，在过着这样的生活吧?",
     "category": "纪录片",
     "disk": "阿里云盘",
-    "poster": "https://image.tmdb.org/t/p/w500/1vsIbN9FOsr97vIAGLYpRu7ZiSq.jpg",
+    "poster": "https://image.tmdb.org/t/p/w500/faszRX0wSzGqjIzDXt79H9ibsXa.jpg",
     "english_title": "Cow",
     "douban": "7.9",
     "rotten_tomatoes": "95"
@@ -5678,7 +5664,7 @@ const FILMS_DATA = [
     "why": "有笑有泪的，不明白陈赫这个人物有什么作用，完全多余",
     "category": "电影",
     "disk": "阿里云盘",
-    "poster": "https://image.tmdb.org/t/p/w500/l4rge37nxK6nQFQVJxgdRaBG1xS.jpg",
+    "poster": "https://image.tmdb.org/t/p/w500/31W7qLEMqQKgdCeCtV9EbVi3bwG.jpg",
     "english_title": "Hi, Mom",
     "douban": "7.7",
     "rotten_tomatoes": "81"
@@ -5790,8 +5776,8 @@ const FILMS_DATA = [
     "why": "只要不去在意会议主题是种族清洗，你可以看到一场常见的讨论组建新业务的跨部门会议，头头脑脑们所有的讨价还价、勾兑妥协都让人非常熟悉乃至感同身受，只要不去在意会议主题是种族清洗。。。这种会议纪要式拍法完美展现了什么叫平庸之恶",
     "category": "电影",
     "disk": "阿里云盘",
-    "poster": "https://image.tmdb.org/t/p/w500/uLH5rUkRNwAUt6YqR86f8ewXZEY.jpg",
-    "english_title": "The Conference",
+    "poster": "https://image.tmdb.org/t/p/w500/8uOdIP7GowDMroxy1zSmBBaRCJw.jpg",
+    "english_title": "Die Wannseekonferenz",
     "douban": "8.1",
     "rotten_tomatoes": "72"
   },
@@ -5860,7 +5846,7 @@ const FILMS_DATA = [
     "why": "《扬名立万》其实有一个夜莺复仇操控全局视角：夜莺父亲在远征军印度作战时战死，原因是军政部贪污，前线补给出问题了——李编剧报道了军政部贪污案，夜莺得知真相——夜莺了解了贪污案的背后是三老——夜莺利用齐乐山复仇，主动勾引三老，并引导齐乐山杀人后掩护自己逃离现场，齐乐山抵罪——夜莺没料到一群无聊电影人要拍这个题材，怕事情暴露，主动报案，让军政部的人去处理这群电影人——夜莺发现电影人们跑到了越南，就继续跟到越南——最后斡旋制造了越南撞船事件，让所有电影人覆灭，也就是片尾报社小孩说的那个新闻。",
     "category": "电影",
     "disk": "阿里云盘",
-    "poster": "https://image.tmdb.org/t/p/w500/hS0tUZVhIW7LW2jErF5ILY9PiR3.jpg",
+    "poster": "https://image.tmdb.org/t/p/w500/8z7IptdlKjox7BIiwNwSdSV68HP.jpg",
     "english_title": "Be Somebody",
     "douban": "7.4",
     "rotten_tomatoes": ""
@@ -5930,7 +5916,7 @@ const FILMS_DATA = [
     "why": "《殖民地》的确不能打高分，影片的主题和片中的浓雾一样晦涩难以捉摸，但若能耐心的看完还是会收获。首先被抛弃留在地球的“泥巴种”和冒着生命危险回到地球勘测的几个人都是真正的被利用的“大多数”；其次大喊着为了大多数口号的人是被洗脑的结果，他们回来杀戮在沼泽里艰难生活的泥巴种真的是为了让自己的“大多数”活下来，还是让少部分掌握武器的统治者回来继续统治“大多数”呢？最讽刺的是我们生活里就存在着《殖民地》的缩影，有少数人通过开矿和污染性生产获得大量财富，当那片土地不适合居住时拍拍屁股去了环境更好的“开普勒”乐园，剩下原住民体验疾病和资源耗尽的痛苦，For The Many？ for the money！",
     "category": "电影",
     "disk": "阿里云盘",
-    "poster": "https://image.tmdb.org/t/p/w500/aKhty3yNrojAYv4HlIILzIS5ZpR.jpg",
+    "poster": "https://image.tmdb.org/t/p/w500/nX7ZUYwgGOCe5nXXwpNg4hAf1xB.jpg",
     "english_title": "Tides",
     "douban": "5.4",
     "rotten_tomatoes": "32"
@@ -5958,8 +5944,8 @@ const FILMS_DATA = [
     "why": "四平八稳的命题作文。可惜选取的视觉角度和戏份重心，没有较多投放在那份用生命换来的报告，如何艰辛地展示在国际红十字会、同盟国阵营以及世人面前的历程， 最后只是以片尾硬字幕来交代这份报告挽救了12万法籍犹太人的彪炳历史。但是，能把这段尘封历史以影像呈现出来，还是具有很大社会意义。",
     "category": "电影",
     "disk": "阿里云盘",
-    "poster": "https://image.tmdb.org/t/p/w500/rhLqdzWvM6yuh1YA5ydPQkRCuR0.jpg",
-    "english_title": "The Execution",
+    "poster": "https://image.tmdb.org/t/p/w500/5UJQS6V0KbHjaZbI0Wv7rL57S7.jpg",
+    "english_title": "The Auschwitz Report",
     "douban": "6.2",
     "rotten_tomatoes": "92"
   },
