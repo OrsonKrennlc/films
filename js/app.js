@@ -7,9 +7,7 @@ const state = {
         disk: 'all',
         rating: 'all',
         sort: 'year-desc',
-        search: '',
-        decade: 'all',
-        imdbRange: 'all'
+        search: ''
     },
     viewMode: 'grid', // 'grid' or 'list'
     filteredData: [],
@@ -17,8 +15,7 @@ const state = {
         total: 0,
         averageImdb: 0,
         categoryCounts: {},
-        ratingCounts: {},
-        decadeCounts: {}
+        ratingCounts: {}
     }
 };
 
@@ -165,14 +162,6 @@ function calculateStats() {
     state.stats.categoryCounts = {};
     state.stats.diskCounts = {};
     state.stats.ratingCounts = {};
-    state.stats.decadeCounts = {
-        '1940s-1970s': 0,
-        '1980s': 0,
-        '1990s': 0,
-        '2000s': 0,
-        '2010s': 0,
-        '2020s': 0
-    };
     
     FILMS_DATA.forEach(film => {
         // Category counts
@@ -196,19 +185,6 @@ function calculateStats() {
         // Rating counts
         let rating = film.rating || 'UR';
         state.stats.ratingCounts[rating] = (state.stats.ratingCounts[rating] || 0) + 1;
-        
-        // Decade calculations
-        if (film.year) {
-            let year = parseInt(film.year.split('-')[0]); // handle ranges like 2018-2019
-            if (!isNaN(year)) {
-                if (year < 1980) state.stats.decadeCounts['1940s-1970s']++;
-                else if (year >= 1980 && year < 1990) state.stats.decadeCounts['1980s']++;
-                else if (year >= 1990 && year < 2000) state.stats.decadeCounts['1990s']++;
-                else if (year >= 2000 && year < 2010) state.stats.decadeCounts['2000s']++;
-                else if (year >= 2010 && year < 2020) state.stats.decadeCounts['2010s']++;
-                else if (year >= 2020) state.stats.decadeCounts['2020s']++;
-            }
-        }
     });
     
     state.stats.averageImdb = imdbCount > 0 ? (imdbSum / imdbCount).toFixed(2) : 0;
@@ -284,11 +260,6 @@ function bindEvents() {
             
             const cat = pill.getAttribute('data-category');
             state.filters.category = cat;
-            
-            // Reset decade filter if changed category
-            state.filters.decade = 'all';
-            updateDecadePillHighlights();
-            
             applyFilters();
         });
     });
@@ -400,7 +371,7 @@ function bindEvents() {
 
 // Filter datasets and sort accordingly
 function applyFilters() {
-    let results = FILMS_DATA;
+    let results = [...FILMS_DATA];
     
     // 1. Category filter
     if (state.filters.category !== 'all') {
@@ -421,35 +392,19 @@ function applyFilters() {
         results = results.filter(film => (film.rating || 'UR') === state.filters.rating);
     }
     
-    // 4. Decade filter (interactive charts trigger this)
-    if (state.filters.decade !== 'all') {
-        results = results.filter(film => {
-            if (!film.year) return false;
-            const year = parseInt(film.year.split('-')[0]);
-            if (isNaN(year)) return false;
-            
-            if (state.filters.decade === '1940s-1970s') return year < 1980;
-            if (state.filters.decade === '1980s') return year >= 1980 && year < 1990;
-            if (state.filters.decade === '1990s') return year >= 1990 && year < 2000;
-            if (state.filters.decade === '2000s') return year >= 2000 && year < 2010;
-            if (state.filters.decade === '2010s') return year >= 2010 && year < 2020;
-            if (state.filters.decade === '2020s') return year >= 2020;
-            return true;
-        });
-    }
-    
-    // 5. Text search filter
+    // 4. Text search filter
     if (state.filters.search !== '') {
         const query = state.filters.search;
         results = results.filter(film => 
             film.title.toLowerCase().includes(query) ||
+            (film.english_title && film.english_title.toLowerCase().includes(query)) ||
             film.year.toLowerCase().includes(query) ||
             film.rating.toLowerCase().includes(query) ||
             film.why.toLowerCase().includes(query)
         );
     }
     
-    // 6. Sorting logic
+    // 5. Sorting logic
     results.sort((a, b) => {
         if (state.filters.sort === 'year-desc') {
             return b.year.localeCompare(a.year);
@@ -495,15 +450,6 @@ function applyFilters() {
     renderFilms();
 }
 
-function updateDecadePillHighlights() {
-    const subTitle = document.querySelector('.glitch-subtitle');
-    if (!subTitle) return;
-    if (state.filters.decade !== 'all') {
-        subTitle.innerHTML = `已选择年代: ${state.filters.decade}`;
-        subTitle.style.color = '#48a977';
-    }
-}
-
 // Render dynamic elements to the page
 function renderFilms() {
     const container = document.getElementById('films-container');
@@ -526,8 +472,10 @@ function renderFilms() {
         state.filteredData.forEach((film, index) => {
             const card = document.createElement('article');
             card.className = 'film-card';
-            card.style.opacity = '0';
-            card.style.transform = 'translateY(20px)';
+            if (index < 20) {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+            }
             
             const ratingClass = getRatingClass(film.rating);
             const fallbackSrc = generatePosterSvg(film.title, film.rating);
@@ -542,7 +490,7 @@ function renderFilms() {
             
             card.innerHTML = `
                 <div class="card-poster ${hasRealPoster ? 'has-real-poster' : ''}">
-                    <img class="poster-image" src="${imageSrc}" 
+                    <img class="poster-image" src="${imageSrc}" loading="lazy" 
                          onerror="this.onerror=null; this.src='${fallbackSrc}'; this.closest('.card-poster').classList.remove('has-real-poster');" 
                          alt="${film.title} Cover">
                     <div class="poster-overlay"></div>
@@ -577,12 +525,14 @@ function renderFilms() {
             card.addEventListener('click', () => openDetailModal(film));
             container.appendChild(card);
             
-            // Stagger load transition
-            setTimeout(() => {
-                card.style.transition = 'all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1)';
-                card.style.opacity = '1';
-                card.style.transform = 'translateY(0)';
-            }, index * 20); // 20ms stagger
+            // Stagger load transition for initial cards
+            if (index < 20) {
+                setTimeout(() => {
+                    card.style.transition = 'all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1)';
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, index * 20); // 20ms stagger
+            }
         });
     } else {
         // List/Table view
@@ -619,7 +569,7 @@ function renderFilms() {
                 <td>
                     <div class="list-title-cell">
                         <div class="list-mini-poster">
-                            <img src="${imageSrc}" onerror="this.onerror=null; this.src='${fallbackSrc}';" style="width:100%; height:100%; object-fit:cover;" alt="">
+                            <img src="${imageSrc}" loading="lazy" onerror="this.onerror=null; this.src='${fallbackSrc}';" style="width:100%; height:100%; object-fit:cover;" alt="">
                         </div>
                         <div style="display:flex; flex-direction:column; gap:2px; max-width: 400px; overflow: hidden;">
                             <span class="list-title-text" style="display:flex; align-items:center;">
@@ -1090,7 +1040,7 @@ function revealWinner(film, winningItem) {
 
     // Populate Winner Details
     document.getElementById('winner-title').innerText = film.title;
-    document.getElementById('winner-en-title').innerText = film.en_title || '';
+    document.getElementById('winner-en-title').innerText = film.english_title || '';
     document.getElementById('winner-year').innerText = film.year || '未知年份';
     document.getElementById('winner-category').innerText = film.category || '电影';
     document.getElementById('winner-disk').innerText = film.disk || 'disk1';
